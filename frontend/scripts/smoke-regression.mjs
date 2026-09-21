@@ -135,17 +135,23 @@ try {
     return false;
   };
 
-  // —— 普通悔棋：等结算完成后再 Z ——
+  // —— 找有效方向，并把盘面养到 ≥6 子 ——
+  // 空盘 pity（occupied < emptyBoardThreshold=4）会在后续结算里自动补子，
+  // 低于阈值的盘面上做悔棋断言会撞上游戏自己的安全网，属于无效测试。
   const DIRECTIONS = ['ArrowRight', 'ArrowUp', 'ArrowLeft', 'ArrowDown'];
+  const tileCount = () => page.evaluate(() => window.__game.scene.getScene('Game').grid.getAllTiles().length);
   let validDir = null;
-  for (const dir of DIRECTIONS) {
+  for (let i = 0; i < 10; i++) {
     await dismissOverlays();
+    const dir = DIRECTIONS[i % 4];
     const before = await sig();
     await pressKey(dir);
     await page.waitForTimeout(700);
-    if ((await sig()) !== before) { validDir = dir; break; }
+    if ((await sig()) !== before) validDir = dir;
+    if (validDir && (await tileCount()) >= 6) break;
   }
-  check('棋盘可动', !!validDir, validDir ? `有效方向 ${validDir}` : '四个方向都没有改变盘面');
+  check('棋盘可动且规模健康', !!validDir && (await tileCount()) >= 6,
+    `dir=${validDir} tiles=${await tileCount()}`);
 
   let plainUndoOk = false;
   if (validDir) {
