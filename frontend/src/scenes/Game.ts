@@ -117,7 +117,7 @@ export class Game extends Scene {
     private progressFooterText!: Phaser.GameObjects.Text;
     private audioManager = new AudioManager();
     private runGold = 0;
-    private undoRemaining = 1;
+    private undoRemaining: number = 1;
     private nextPreviewBox!: Phaser.GameObjects.Rectangle;
     private nextPreviewIcon: Phaser.GameObjects.Image | Phaser.GameObjects.Text | null = null;
     private chapterTracker!: ChapterTracker;
@@ -389,7 +389,7 @@ export class Game extends Scene {
         this.gameFeel = new GameFeel(this, this.balanceConfig.feel || {}, this.audioManager);
         this.sprintMovesLeft = Number(this.balanceConfig.modes?.sprintMoves ?? 30);
         const noUndo = this.runMode === 'daily' || this.runMode === 'sprint' || this.runMode === 'recipeHunt';
-        if (noUndo) this.undoRemaining = 0;
+        this.undoRemaining = noUndo ? 0 : Number(this.balanceConfig.undo?.freePerRun ?? 1);
 
         const savedRun = this.continueRun ? RunStateManager.getContinueSnapshot() : null;
         if (savedRun) {

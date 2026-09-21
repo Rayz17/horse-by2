@@ -1,3 +1,5 @@
+import balanceConfig from '../data/balance.json';
+
 export type BgmPalette = 'standard' | 'finale' | 'nearDeath' | 'trueEnding';
 
 const PALETTES: Record<BgmPalette, number[]> = {
@@ -19,9 +21,21 @@ export class AudioManager {
     private static readonly VOLUME_KEY = 'horse_merge_volume';
 
     constructor() {
-        this.muted = localStorage.getItem(AudioManager.MUTE_KEY) === '1';
-        const storedVolume = Number(localStorage.getItem(AudioManager.VOLUME_KEY));
-        this.volume = Number.isFinite(storedVolume) ? Math.min(1, Math.max(0, storedVolume)) : 0.7;
+        // localStorage 在隐私模式下可能抛异常；音量键从未写入时取 balance.json 的默认值
+        // （此前 Number(null)=0 会让新玩家一开始就处于静音音量）。
+        const fallback = Number(balanceConfig.audio?.defaultVolume ?? 0.7);
+        try {
+            this.muted = localStorage.getItem(AudioManager.MUTE_KEY) === '1';
+            const storedRaw = localStorage.getItem(AudioManager.VOLUME_KEY);
+            const storedVolume = storedRaw === null ? NaN : Number(storedRaw);
+            this.volume = Number.isFinite(storedVolume)
+                ? Math.min(1, Math.max(0, storedVolume))
+                : fallback;
+        } catch (err) {
+            console.warn('AudioManager: localStorage unavailable, using defaults', err);
+            this.muted = false;
+            this.volume = fallback;
+        }
     }
 
     isMuted() {
@@ -34,7 +48,9 @@ export class AudioManager {
 
     setVolume(volume: number) {
         this.volume = Math.min(1, Math.max(0, volume));
-        localStorage.setItem(AudioManager.VOLUME_KEY, String(this.volume));
+        try {
+            localStorage.setItem(AudioManager.VOLUME_KEY, String(this.volume));
+        } catch { /* privacy mode */ }
         this.bgmNodes.forEach(({ gain }, i) => {
             gain.gain.value = this.effectiveGain(i === 0 ? 0.012 : 0.008);
         });
@@ -43,7 +59,9 @@ export class AudioManager {
 
     setMuted(muted: boolean) {
         this.muted = muted;
-        localStorage.setItem(AudioManager.MUTE_KEY, muted ? '1' : '0');
+        try {
+            localStorage.setItem(AudioManager.MUTE_KEY, muted ? '1' : '0');
+        } catch { /* privacy mode */ }
         if (muted) this.stopBgm();
         else if (this.ctx) void this.playBgm(this.bgmPalette);
     }

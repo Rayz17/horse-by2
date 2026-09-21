@@ -8,15 +8,15 @@
   "theme_color": "#1a1a2e",
   "icons": [
     {
-      "src": "assets/ui/border_ssr.webp",
+      "src": "assets/ui/icon_192.png",
       "sizes": "192x192",
-      "type": "image/webp",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "assets/ui/bg_main_menu.webp",
+      "src": "assets/ui/icon_512.png",
       "sizes": "512x512",
-      "type": "image/webp",
+      "type": "image/png",
       "purpose": "any"
     }
   ]

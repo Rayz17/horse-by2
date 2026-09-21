@@ -27,9 +27,8 @@ const config: Phaser.Types.Core.GameConfig = {
 };
 
 const game = new Phaser.Game(config);
-if (import.meta.env.DEV) {
-    (window as unknown as { __game: Phaser.Game }).__game = game;
-}
+// 全模式暴露调试句柄：冒烟脚本与线上排错都需要；游戏无后端，无安全面影响
+(window as unknown as { __game: Phaser.Game }).__game = game;
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js').catch(() => undefined);

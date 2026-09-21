@@ -1,9 +1,19 @@
-const CACHE = 'horse-merge-shell-v1';
+const CACHE = 'horse-merge-shell-v2';
 const SHELL = ['./', './index.html'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE).then((cache) => cache.addAll(SHELL)).catch(() => undefined)
+  );
+});
+
+// 激活时清掉旧版本缓存，避免发新版后用户永远停留在旧 shell
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys()
+      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))))
+      .then(() => self.clients.claim())
+      .catch(() => undefined)
   );
 });
 

@@ -1,3 +1,5 @@
+import balanceConfig from '../data/balance.json';
+
 export class SaveManager {
     private static readonly STORAGE_KEY_UNLOCKED = 'horse_merge_unlocked_chars';
     private static readonly STORAGE_KEY_HIGHSCORE = 'horse_merge_highscore';
@@ -73,7 +75,8 @@ export class SaveManager {
     }
 
     public setLegacyGold(amount: number) {
-        this.legacyGold = Math.max(0, Math.min(amount, 2000));
+        const cap = Number(balanceConfig.legacyGoldCap ?? 2000);
+        this.legacyGold = Math.max(0, Math.min(amount, cap));
         this.saveNumber(SaveManager.STORAGE_KEY_LEGACY_GOLD, this.legacyGold);
     }
 

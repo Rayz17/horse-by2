@@ -1569,6 +1569,17 @@ export class Grid {
                 }
             }
         }
+        // 灭火、清障：清掉首领留下的火/毒/石/岩浆障碍（暗影复制体不是障碍，保留）
+        const obstaclesBefore = this.getObstacleCellSet().size;
+        for (const type of ['fire', 'poison', 'stone', 'magma']) {
+            this.clearBossEffects(type);
+        }
+        const cleared = obstaclesBefore - this.getObstacleCellSet().size;
+        if (cleared > 0) {
+            this.rebuildBlockedFromWorld();
+            this.refreshBlockedMarkers();
+            count += cleared;
+        }
         return count;
     }
 
