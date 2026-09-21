@@ -144,20 +144,44 @@ export class SaveManager {
     }
 
     private loadJSON<T>(key: string, defaultValue: T): T {
-        const data = localStorage.getItem(key);
-        return data ? JSON.parse(data) as T : defaultValue;
+        try {
+            const data = localStorage.getItem(key);
+            if (!data) return defaultValue;
+            const parsed = JSON.parse(data) as T;
+            // 值类型被篡改（手改存档/旧版本残留）时按缺省处理，避免构造函数抛异常白屏
+            if (parsed === null || typeof parsed !== typeof defaultValue) return defaultValue;
+            return parsed;
+        } catch (err) {
+            console.warn(`SaveManager: ignore corrupted save "${key}"`, err);
+            return defaultValue;
+        }
     }
 
     private saveJSON(key: string, value: unknown) {
-        localStorage.setItem(key, JSON.stringify(value));
+        try {
+            localStorage.setItem(key, JSON.stringify(value));
+        } catch (err) {
+            console.warn(`SaveManager: failed to persist "${key}"`, err);
+        }
     }
 
     private loadNumber(key: string, defaultValue: number): number {
-        const data = localStorage.getItem(key);
-        return data ? parseInt(data, 10) : defaultValue;
+        try {
+            const data = localStorage.getItem(key);
+            if (data === null) return defaultValue;
+            const parsed = parseInt(data, 10);
+            return Number.isFinite(parsed) ? parsed : defaultValue;
+        } catch (err) {
+            console.warn(`SaveManager: ignore corrupted save "${key}"`, err);
+            return defaultValue;
+        }
     }
 
     private saveNumber(key: string, value: number) {
-        localStorage.setItem(key, value.toString());
+        try {
+            localStorage.setItem(key, value.toString());
+        } catch (err) {
+            console.warn(`SaveManager: failed to persist "${key}"`, err);
+        }
     }
 }

@@ -32,7 +32,9 @@ export class CharacterAssetLoader {
         const resolved = roster.find(c => c.id === char.id) || char;
         if (scene.textures.exists(resolved.id)) {
             this.ensureCharacterAnimations(scene, resolved);
-            onReady?.();
+            // onReady 必须异步派发：调用方（如图鉴）会在回调里整页重建 UI，
+            // 同步执行会让「重建 → 再次 ensureCharacter → 再重建」无限递归直到栈溢出。
+            scene.time.delayedCall(0, () => onReady?.());
             return false;
         }
         scene.load.setPath('assets');

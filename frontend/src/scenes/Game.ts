@@ -2159,6 +2159,8 @@ export class Game extends Scene {
             this.showToast('本局悔棋已用尽');
             return;
         }
+        // 先丢弃滑动后尚未落定的结算回调（补落子/压实），否则它会覆盖回滚结果
+        this.grid.cancelPendingResolve();
         this.grid.restoreUndoSnapshot(this.undoSnapshot);
         this.bossManager.sanitizeOccupancy();
         this.score = this.undoScore;

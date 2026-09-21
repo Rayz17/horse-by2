@@ -13,6 +13,7 @@ export class Gallery extends Phaser.Scene {
     private recipes: Recipe[] = [];
     private currentPage: number = 0;
     private maxPages: number = 0;
+    private pageRenderPending: boolean = false;
     private saveManager!: SaveManager;
     
     private container!: Phaser.GameObjects.Container;
@@ -157,6 +158,19 @@ export class Gallery extends Phaser.Scene {
         return [...regular, ...endings];
     }
 
+    /**
+     * 资产就绪回调统一走这里：把同一帧内的多次请求合并成下一帧的一次整页重建，
+     * 避免逐卡回调各自 removeAll(true) 把正在构建的列表清成空白页。
+     */
+    private scheduleShowPage() {
+        if (this.pageRenderPending) return;
+        this.pageRenderPending = true;
+        this.time.delayedCall(0, () => {
+            this.pageRenderPending = false;
+            if (this.sys.isActive() && this.container) this.showPage(this.currentPage);
+        });
+    }
+
     private showPage(page: number) {
         this.container.removeAll(true);
         this.pageText.setText(`${page + 1} / ${Math.max(1, this.maxPages)}`);
@@ -238,9 +252,7 @@ export class Gallery extends Phaser.Scene {
         const portraitY = -8;
         const portraitBox = Math.min(innerW - 6, innerH - 34);
         if (isUnlocked) {
-            CharacterAssetLoader.ensureCharacter(this, char, () => {
-                if (this.container) this.showPage(this.currentPage);
-            });
+            CharacterAssetLoader.ensureCharacter(this, char, () => this.scheduleShowPage());
             const fallbackText = this.add.text(0, portraitY, '?', {
                 fontSize: '40px', color: '#666666', fontStyle: 'bold'
             }).setOrigin(0.5);

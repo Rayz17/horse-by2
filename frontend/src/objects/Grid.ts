@@ -33,6 +33,7 @@ export class Grid {
     private selector: Phaser.GameObjects.Rectangle;
     private selectedTile: Tile | null = null;
     private isResolvingMove: boolean = false;
+    private pendingResolveEvent: Phaser.Time.TimerEvent | null = null;
     private lastMoveEndTime: number = 0;
 
     private lastMaxLevel: number = 1;
@@ -698,6 +699,16 @@ export class Grid {
         const next = this.pendingSwipe;
         this.pendingSwipe = null;
         this.move(next.dirX, next.dirY);
+    }
+
+    /** 悔棋前调用：丢弃尚未落定的滑动结算回调，避免补落子/压实覆盖已回滚的盘面。 */
+    public cancelPendingResolve() {
+        if (this.pendingResolveEvent) {
+            this.pendingResolveEvent.remove(false);
+            this.pendingResolveEvent = null;
+        }
+        this.isResolvingMove = false;
+        this.pendingSwipe = null;
     }
 
     private handleAimTap(x: number, y: number) {
@@ -2135,7 +2146,9 @@ export class Grid {
         if (this.compactEmptyAlong(dirX, dirY)) moved = true;
 
         if (moved) {
-            this.scene.time.delayedCall(250, () => {
+            this.pendingResolveEvent?.remove(false);
+            this.pendingResolveEvent = this.scene.time.delayedCall(250, () => {
+                this.pendingResolveEvent = null;
                 mergedResults.forEach(merge => {
                     if (this.onScoreChange) this.onScoreChange(merge.char, merge.x, merge.y, merge.isCritical);
                 });
