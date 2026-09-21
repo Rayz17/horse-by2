@@ -12,7 +12,6 @@ export class Gallery extends Phaser.Scene {
     private bosses: BossData[] = [];
     private recipes: Recipe[] = [];
     private currentPage: number = 0;
-    private itemsPerPage: number = 20; // 4 cols * 5 rows = 20 per page
     private maxPages: number = 0;
     private saveManager!: SaveManager;
     
@@ -107,7 +106,6 @@ export class Gallery extends Phaser.Scene {
         this.tabBgRecipe.setFillStyle(tab === 'recipe' ? 0x12304a : 0x2a2a3c, 0.95);
 
         const perPage = this.getPageConfig().perPage;
-        this.itemsPerPage = perPage;
         if (tab === 'character') {
             this.maxPages = Math.ceil(this.getGalleryCharacters().length / perPage);
         } else if (tab === 'boss') {

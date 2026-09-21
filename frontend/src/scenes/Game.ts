@@ -18,7 +18,6 @@ import { ProgressPanel } from '../ui/ProgressPanel';
 import { createShopPanel } from '../ui/ShopPanel';
 import { renderInventoryPanel } from '../ui/InventoryPanel';
 import { fitWrappedText } from '../utils/textFit';
-import { attachPortrait } from '../utils/portrait';
 import { buildCharacterCard } from '../ui/CharacterCard';
 import { fitSpriteVisual } from '../utils/spriteFit';
 import { isShortMode, MODE_LABELS, normalizeRunConfig, persistSlotForMode, ROUTE_BUTTONS, usesDailyWallet } from '../utils/runConfig';

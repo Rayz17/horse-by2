@@ -911,10 +911,6 @@ export class SkillExecutor {
         );
     }
 
-    private hasCosmicOnBoard(): boolean {
-        return this.forEachTile(t => t.character?.id === 'cosmic_one').length > 0;
-    }
-
     private collectLowTiles(): Tile[] {
         return this.forEachTile((t, r, c) =>
             !!t.character &&

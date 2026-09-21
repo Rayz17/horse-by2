@@ -23,7 +23,6 @@ export class Tile extends Phaser.GameObjects.Container {
     private routeTag: Phaser.GameObjects.Text;
     private freezeOverlay: Phaser.GameObjects.Rectangle;
     private readonly cellSize: number;
-    private mergeHint: 'none' | 'focus' | 'next' = 'none';
 
     constructor(scene: Phaser.Scene, row: number, col: number, size: number, data: Character | Item, type: 'character' | 'item') {
         super(scene, 0, 0);
@@ -110,7 +109,6 @@ export class Tile extends Phaser.GameObjects.Container {
     }
 
     public setMergeHint(kind: 'none' | 'focus' | 'next', extra?: { nextLevel?: number }) {
-        this.mergeHint = kind;
         if (!this.routeTag) return;
         if (!this.character || this.isFrozen) {
             this.bg.setStrokeStyle(1, 0xffffff, 0.35);
