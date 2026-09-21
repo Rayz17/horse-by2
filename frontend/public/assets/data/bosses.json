@@ -1,0 +1,163 @@
+[
+  {
+    "id": "fire_monkey",
+    "name": "淘气火猴",
+    "hp": 2000,
+    "maxHp": 2000,
+    "weakness": [
+      "piplup_cosplay",
+      "plumber_dino"
+    ],
+    "dialogue": {
+      "spawn": "嘻嘻嘻，来玩火吧！",
+      "skill": "看我的火把！烧起来！",
+      "hit": "哎哟，好烫！哦不对，我不怕烫！",
+      "weakness_hit": "啊！水...好吃！不对，好痛！",
+      "defeat": "不玩了不玩了，没意思..."
+    },
+    "skill": {
+      "id": "fire_patch",
+      "name": "乱扔火把",
+      "desc": "随机点燃棋盘上的空位"
+    },
+    "description": "一只喜欢恶作剧的火猴，到处点火，让人烦不胜烦。"
+  },
+  {
+    "id": "miasma_bat",
+    "name": "瘴气巨蝠",
+    "hp": 4000,
+    "maxHp": 4000,
+    "weakness": [
+      "unicorn",
+      "centaur_arc"
+    ],
+    "dialogue": {
+      "spawn": "嘶嘶...呼吸这里的空气吧...",
+      "skill": "毒雾弥漫...交出你们的金币...",
+      "hit": "你打不中我的！",
+      "weakness_hit": "可恶的净化之光！竟敢射穿我的翅膀！",
+      "defeat": "阳光...太刺眼了..."
+    },
+    "skill": {
+      "id": "miasma_steal",
+      "name": "毒雾掠夺",
+      "desc": "释放毒雾，扣除玩家金币"
+    },
+    "description": "常年隐藏在阴暗洞穴中的巨蝠，散发着恶臭的毒雾，喜欢收集闪亮亮的金币。"
+  },
+  {
+    "id": "stone_golem",
+    "name": "岩石巨像",
+    "hp": 8000,
+    "maxHp": 8000,
+    "weakness": [
+      "valkyrie_steel",
+      "nightmare"
+    ],
+    "dialogue": {
+      "spawn": "吾乃...大地之盾...",
+      "skill": "坚如磐石...",
+      "hit": "不痛不痒。",
+      "weakness_hit": "我的防线...被粉碎了？！",
+      "defeat": "化为...尘土..."
+    },
+    "skill": {
+      "id": "stone_wall",
+      "name": "石墙防御",
+      "desc": "生成无法消除的石墙障碍"
+    },
+    "description": "由古老岩石构成的巨大魔像，为了保护某样东西而不断建立防线。"
+  },
+  {
+    "id": "lava_beast",
+    "name": "地心熔岩驹",
+    "hp": 15000,
+    "maxHp": 15000,
+    "weakness": [
+      "ice_glacier",
+      "pegasus_fly"
+    ],
+    "dialogue": {
+      "spawn": "让一切都在熔岩中灰飞烟灭！",
+      "skill": "感受地核的温度吧！",
+      "hit": "就这？不够给我挠痒痒的！",
+      "weakness_hit": "啊！！好冷...好高的攻击...",
+      "defeat": "地心的怒火...终将熄灭..."
+    },
+    "skill": {
+      "id": "magma_floor",
+      "name": "熔岩地核",
+      "desc": "熔岩化部分格子，烧毁低级马匹"
+    },
+    "description": "诞生于星球深处的恐怖炎魔，它的出现意味着毁灭的降临。"
+  },
+  {
+    "id": "shadow_assassin",
+    "name": "无头梦魇",
+    "hp": 30000,
+    "maxHp": 30000,
+    "weakness": [
+      "deer_sign",
+      "hope_armor"
+    ],
+    "dialogue": {
+      "spawn": "直面你内心的阴暗面吧！",
+      "skill": "出来吧，你的复制体！",
+      "hit": "影子...是杀不死的！",
+      "weakness_hit": "这到底是什么魔法？！我的暗影被驱散了！",
+      "defeat": "终有一天...深渊会吞噬一切..."
+    },
+    "skill": {
+      "id": "shadow_clone",
+      "name": "暗影复制",
+      "desc": "召唤最高等级马的暗影复制体作为障碍"
+    },
+    "description": "深渊的主宰，能够洞悉人心的弱点，并召唤出最令人恐惧的幻影。"
+  },
+  {
+    "id": "frost_wyrm",
+    "name": "极寒龙马",
+    "hp": 50000,
+    "maxHp": 50000,
+    "weakness": [
+      "god_of_war",
+      "sun_chariot"
+    ],
+    "dialogue": {
+      "spawn": "凛冬已至！",
+      "skill": "冻结吧，可怜的虫子们！",
+      "hit": "我的冰盾坚不可摧！",
+      "weakness_hit": "这不可能！竟然劈碎了我的绝对防御！",
+      "defeat": "冰雪...融化了..."
+    },
+    "skill": {
+      "id": "blizzard_freeze",
+      "name": "暴雪冰封",
+      "desc": "无敌冰盾并大范围冻结棋子"
+    },
+    "description": "沉睡在极寒之地的古老巨龙，它的呼吸能让空气瞬间结冰。"
+  },
+  {
+    "id": "chaos_void",
+    "name": "熵之黑洞马",
+    "hp": 100000,
+    "maxHp": 100000,
+    "weakness": [
+      "samurai_mech",
+      "elon_mars"
+    ],
+    "dialogue": {
+      "spawn": "饥饿...无尽的饥饿...",
+      "skill": "吃掉！全部吃掉！",
+      "hit": "太小了...不够塞牙缝的...",
+      "weakness_hit": "唔啊啊！！我的肚子被切开了！！",
+      "defeat": "好饿...我还想吃..."
+    },
+    "skill": {
+      "id": "devour_grid",
+      "name": "吞噬星空",
+      "desc": "直接吃掉棋盘上的格子"
+    },
+    "description": "游荡在宇宙边缘的贪婪巨兽，它能吞噬一切，甚至是空间本身。"
+  }
+]

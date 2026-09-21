@@ -1,0 +1,34 @@
+# 动作条第3帧审计结果 (2026-07-11, 联系表见同目录 sheet_1..4.png)
+
+## 明确污染（烤入英文字幕/泄漏prompt文本），需重出 16 条:
+alexander_mt      # "CONQUEST TERRITORY BUFF"
+auntie_ma         # "WHAT?! You said KITCHEN TOOLS?..." 整句乱文
+bifrost_br        # "ASCENSION UPGRADE!"
+cosmic_one        # "UNIVERSE CREATION!"
+derby_girl        # "FINAL STRETCH SPRINT!"
+doctor_shock      # "(3) SHOCK!" 帧序号泄漏
+elon_mars         # "TO THE MOON!" (同时帧错位)
+first_place       # "FIRST STRIKE!"
+flattery_hand     # "MORALE BOOST / INVINCIBLE FEELING PARTICLES"
+god_of_war        # "CRITICAL STRIKE! STRIKE!" 重复错句
+lantern_life      # "TIME REWIND"
+nightmare         # "[PHASE]" 标记泄漏
+recruiter_hr      # "JOIN US..." 招聘喊话字幕
+sleipnir_god      # "TELEPORT!"
+stool_horse       # "I AM NO LONGER THE STOOL YOU SIT ON..." 整段文字
+wusun_sky         # "(3) powerful action: endurance recovery breath" prompt原文泄漏
+
+## 帧错位（程序检测，中心偏移>18%或高度差>30%），需重出 4 条(elon_mars已含上表):
+rainbow_fly
+pegasus_fly
+sun_chariot
+vest_turtle
+
+## 边缘案例，判定保留（文字属角色设定的有意元素）:
+cow_horse         # "996" 是牛马打工人梗的核心符号
+coder_ling        # 衣服上 C++/42 属码农人设
+lost_found        # 「塞翁失马，焉知非福」中文成语横幅，正确且契合
+qilin_myth        # 「福吉」印章式书法装饰
+tech_giants       # 社交平台图标拼贴属互联网巨头梗（若后续有版权顾虑再重出）
+luxury_lego       # 车标像素化痕迹极小
+west_team         # 佛光卍字符属西游记语境（若面向国际发行建议重出）

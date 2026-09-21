@@ -1,0 +1,6 @@
+dist/
+raw_assets/
+raw_assets_backup/
+node_modules/
+.venv/
+.DS_Store

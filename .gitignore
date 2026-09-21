@@ -1,0 +1,20 @@
+# 依赖与虚拟环境
+node_modules/
+venv/
+frontend/.venv/
+
+# 构建产物
+frontend/dist/
+
+# 大体积原始素材（处理后的成品在 frontend/public/assets）
+frontend/raw_assets/
+frontend/raw_assets_backup/
+
+# 本地运行产物
+output/
+.playwright-mcp/
+*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db

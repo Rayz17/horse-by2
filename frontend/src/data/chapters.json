@@ -1,0 +1,52 @@
+[
+  {
+    "id": "chapter_start",
+    "tier": 1,
+    "title": "青铜启程",
+    "objectives": [
+      { "id": "t1_merge_lv10", "text": "合成出 Lv.10", "type": "reach_level", "target": 10, "reward": 100 },
+      { "id": "t1_beat_fire_monkey", "text": "击败淘气火猴", "type": "defeat_boss", "target": "fire_monkey", "reward": 150 },
+      { "id": "t1_combo_3", "text": "触发连击×3", "type": "combo", "target": 3, "reward": 175 }
+    ]
+  },
+  {
+    "id": "chapter_mutation",
+    "tier": 2,
+    "title": "奇种涌现",
+    "objectives": [
+      { "id": "t2_recipe", "text": "触发1次突变配方", "type": "recipe_mutation", "target": 1, "reward": 175 },
+      { "id": "t2_skills_3", "text": "使用3次技能", "type": "skill_use", "target": 3, "reward": 200 },
+      { "id": "t2_reach_lv30", "text": "合成出 Lv.30", "type": "reach_level", "target": 30, "reward": 225 }
+    ]
+  },
+  {
+    "id": "chapter_myth",
+    "tier": 3,
+    "title": "神话加速",
+    "objectives": [
+      { "id": "t3_boss_2", "text": "累计击败2个Boss", "type": "boss_defeats", "target": 2, "reward": 250 },
+      { "id": "t3_reach_lv60", "text": "合成出 Lv.60", "type": "reach_level", "target": 60, "reward": 275 },
+      { "id": "t3_combo_4", "text": "触发连击×4", "type": "combo", "target": 4, "reward": 300 }
+    ]
+  },
+  {
+    "id": "chapter_star",
+    "tier": 4,
+    "title": "终章星穹",
+    "objectives": [
+      { "id": "t4_reach_lv90", "text": "合成出 Lv.90", "type": "reach_level", "target": 90, "reward": 325 },
+      { "id": "t4_boss_4", "text": "累计击败4个Boss", "type": "boss_defeats", "target": 4, "reward": 350 },
+      { "id": "t4_skills_8", "text": "使用8次技能", "type": "skill_use", "target": 8, "reward": 375 }
+    ]
+  },
+  {
+    "id": "chapter_harmony",
+    "tier": 5,
+    "title": "大和谐",
+    "objectives": [
+      { "id": "t5_reach_lv101", "text": "合成出 Lv.101", "type": "reach_level", "target": 101, "reward": 400 },
+      { "id": "t5_harmony", "text": "达成大和谐", "type": "harmony", "target": 1, "reward": 500 },
+      { "id": "t5_boss_6", "text": "累计击败6个Boss", "type": "boss_defeats", "target": 6, "reward": 450 }
+    ]
+  }
+]

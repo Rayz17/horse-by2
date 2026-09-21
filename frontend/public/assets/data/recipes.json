@@ -1,0 +1,66 @@
+[
+    {
+        "id": "rec_dacha_auntie",
+        "type": "mutation",
+        "ingredients": ["sophist_white", "rock_horse"],
+        "result": "auntie_ma",
+        "hint": "听岔",
+        "desc": "白马非马听岔成马冬梅。"
+    },
+    {
+        "id": "rec_overtime_cow",
+        "type": "mutation",
+        "ingredients": ["black_sheep", "dark_prince"],
+        "result": "cow_horse",
+        "hint": "加班",
+        "desc": "害群之马加班成牛马。"
+    },
+    {
+        "id": "rec_pollute_toilet",
+        "type": "mutation",
+        "ingredients": ["don_quixote", "trojan_wood"],
+        "result": "toilet_head",
+        "hint": "污染冲水",
+        "desc": "骑士精神被木马污染，冲出马桶MT。"
+    },
+    {
+        "id": "rec_debug_coder",
+        "type": "mutation",
+        "ingredients": ["patriot_yue", "alexander_mt"],
+        "result": "coder_feng",
+        "hint": "对撞 Debug",
+        "desc": "忠义与征服对撞，Debug 出二马弟弟。"
+    },
+    {
+        "id": "rec_censor_pixel",
+        "type": "mutation",
+        "ingredients": ["gundam_kim", "mobile_horse"],
+        "result": "pixel_censor",
+        "hint": "出镜被和谐",
+        "desc": "高达出镜被和谐成马赛克。"
+    },
+    {
+        "id": "rec_paint_magic",
+        "type": "catalyst",
+        "ingredients": ["any_horse", "item_brush"],
+        "result": "magic_paint",
+        "hint": "神笔一点",
+        "desc": "神笔一点，画出马良。"
+    },
+    {
+        "id": "rec_derby_girl",
+        "type": "mutation",
+        "ingredients": ["qilin_myth", "sun_chariot"],
+        "result": "derby_girl",
+        "hint": "末脚冲线",
+        "desc": "神兽下场，末脚冲成赛马娘。"
+    },
+    {
+        "id": "rec_giants_loop",
+        "type": "mutation",
+        "ingredients": ["merry_go", "samurai_mech"],
+        "result": "tech_giants",
+        "hint": "三驾闭环",
+        "desc": "旋转木马装上刃甲，三驾马车闭环。"
+    }
+]

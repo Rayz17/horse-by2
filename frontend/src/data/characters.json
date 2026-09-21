@@ -1,0 +1,2192 @@
+[
+    {
+        "id": "bamboo_horse",
+        "name": "竹马",
+        "level": 1,
+        "tier": 1,
+        "faction": "A",
+        "rarity": "N",
+        "description": "骑着竹竿的红肚兜小孩。 (青梅竹马)",
+        "origin": "成语“青梅竹马”。",
+        "background": "每一个大英雄的起点。它虽然只是一根竹竿，但在孩子的想象中，它是世界上最快的战马。",
+        "skill": {
+            "name": "童趣",
+            "description": "回合结束时，有几率生产一个 [青梅] 道具。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "amount": 10
+            }
+        },
+        "greeting": "忆往昔童心未泯，看今朝前程似锦。祝您初心不改，快乐无忧！"
+    },
+    {
+        "id": "piplup_cosplay",
+        "name": "波加曼",
+        "level": 2,
+        "tier": 1,
+        "faction": "B",
+        "rarity": "N",
+        "description": "穿着马布偶装的蓝色企鹅。 (宝可梦梗)",
+        "origin": "宝可梦（玩梗）。",
+        "background": "一只蓝色的企鹅，强行穿着马的布偶装混进了马群。它坚信自己是“水系马”。",
+        "skill": {
+            "name": "泡沫",
+            "description": "对敌人造成微量水属性伤害。无敌人时清理低级单位或解冻。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 100
+            }
+        },
+        "greeting": "呆萌可爱惹人疼，人气爆棚福气生。祝您人见人爱，可可爱爱！"
+    },
+    {
+        "id": "stool_horse",
+        "name": "马扎",
+        "level": 3,
+        "tier": 1,
+        "faction": "C",
+        "rarity": "N",
+        "description": "长腿的折叠凳，坐着吃瓜。",
+        "origin": "中国传统折叠凳。",
+        "background": "它长出了腿，因为它不想再被人坐了。现在它只想安静地坐着吃瓜看戏。",
+        "skill": {
+            "name": "吃瓜",
+            "description": "原地无敌 1 回合，并回复生命值。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "amount": 30
+            }
+        },
+        "greeting": "坐看云起心境宽，岁月静好人安康。祝您悠闲自在，静享福气！"
+    },
+    {
+        "id": "pony_pink",
+        "name": "小马宝莉",
+        "level": 4,
+        "tier": 1,
+        "faction": "D",
+        "rarity": "N",
+        "description": "粉色的魔法小马。 (MLP)",
+        "origin": "MLP (My Little Pony)。",
+        "background": "它是友谊的化身。它相信只要大家手拉手，就没有打不倒的 Boss。",
+        "skill": {
+            "name": "友谊魔法",
+            "description": "连接周围友军，分摊受到的伤害。 【效果：生成 2 个低级单位】",
+            "type": "arch_summon",
+            "params": {
+                "damage": 200,
+                "count": 2
+            }
+        },
+        "greeting": "友谊长存暖人心，快乐相伴每一天。祝您广交良友，生活甜美！"
+    },
+    {
+        "id": "terracotta",
+        "name": "秦俑马",
+        "level": 5,
+        "tier": 1,
+        "faction": "A",
+        "rarity": "N",
+        "description": "呆萌的陶土战马。 (兵马俑)",
+        "origin": "秦始皇陵兵马俑。",
+        "background": "沉睡了两千年的陶土战马。虽然动作僵硬，但它的防御力是实打实的。",
+        "skill": {
+            "name": "石化",
+            "description": "受到攻击时，使攻击者防御力降低。 【效果：清除低级单位】",
+            "type": "arch_clear_low",
+            "params": {
+                "damage": 250
+            }
+        },
+        "greeting": "根基稳固如磐石，基业长青传万代。祝您家业兴旺，坚不可摧！"
+    },
+    {
+        "id": "vest_turtle",
+        "name": "马甲",
+        "level": 6,
+        "tier": 1,
+        "faction": "C",
+        "rarity": "N",
+        "description": "穿着红背心的乌龟。 (赵本山小品)",
+        "origin": "小品梗“穿上马甲我就不认识你了？”",
+        "background": "一只试图伪装成马的乌龟。它以为穿个红背心就能骗过所有人，其实大家只是配合它演戏。",
+        "skill": {
+            "name": "缩壳",
+            "description": "生命值低于 30% 时，防御力提升 200%。 【效果：随机变化同阶角色】",
+            "type": "arch_transform",
+            "params": {
+                "damage": 300
+            }
+        },
+        "greeting": "焕然一新换新颜，形象升级人气旺。祝您形象百变，焕发光彩！"
+    },
+    {
+        "id": "white_base",
+        "name": "木马号",
+        "level": 7,
+        "tier": 1,
+        "faction": "B",
+        "rarity": "N",
+        "description": "长腿的白色战舰。 (高达0079)",
+        "origin": "高达 0079 白色要塞。",
+        "background": "它是联邦军的秘密武器，一艘长着马腿的宇宙战舰。只有新人类才能驾驭它。",
+        "skill": {
+            "name": "米加粒子炮",
+            "description": "白色要塞展开主炮，沿滑动方向整行/整列扫射，并对首领造成伤害。",
+            "type": "sig_cannon",
+            "params": {
+                "damage": 350
+            }
+        },
+        "greeting": "基地稳固家业兴，防御无敌保平安。祝您固若金汤，平平安安！"
+    },
+    {
+        "id": "mini_pony",
+        "name": "果下马",
+        "level": 8,
+        "tier": 1,
+        "faction": "D",
+        "rarity": "N",
+        "description": "背着水果篮的超迷你马。",
+        "origin": "古代矮种马。",
+        "background": "小得可以在果树下行走。它背着的不是武器，而是满满一筐吉祥果。",
+        "skill": {
+            "name": "补给",
+            "description": "每 5 回合产出一个 [苹果] (回复少量生命)。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "amount": 80
+            }
+        },
+        "greeting": "小巧玲珑藏大志，硕果累累喜丰收。祝您收获满满，甜蜜幸福！"
+    },
+    {
+        "id": "road_monster",
+        "name": "马路",
+        "level": 9,
+        "tier": 1,
+        "faction": "C",
+        "rarity": "N",
+        "description": "成精的柏油路。 (压马路)",
+        "origin": "词语“压马路”。",
+        "background": "真正的“马”路。它是一段成精的沥青路面，喜欢让人在它背上跑。",
+        "skill": {
+            "name": "铺路",
+            "description": "增加友军在它身上的移动速度。 【效果：随机变化同阶角色】",
+            "type": "arch_transform",
+            "params": {
+                "damage": 450
+            }
+        },
+        "greeting": "路路通畅运势顺，四通八达财源广。祝您条条大路通罗马！"
+    },
+    {
+        "id": "bronze_runner",
+        "name": "马踏飞燕",
+        "level": 10,
+        "tier": 1,
+        "faction": "A",
+        "rarity": "N",
+        "description": "表情扭曲的铜马踩燕子。",
+        "origin": "东汉铜奔马。",
+        "background": "因为跑得太快踩到了燕子，导致燕子骂骂咧咧。它的表情永远定格在那个尴尬又失礼的瞬间。",
+        "skill": {
+            "name": "平衡",
+            "description": "免疫击退效果。 【效果：清除周围 3×3 区域】",
+            "type": "arch_bomb",
+            "params": {
+                "radius": 1
+            }
+        },
+        "greeting": "步步高升惊四座，马到成功越巅峰。祝您事业腾飞，超越自我！"
+    },
+    {
+        "id": "link_epona",
+        "name": "林克艾波娜",
+        "level": 11,
+        "tier": 1,
+        "faction": "B",
+        "rarity": "N",
+        "description": "绿帽勇者骑着棕色马。 (塞尔达)",
+        "origin": "塞尔达传说。",
+        "background": "只要听到陶笛声，它就会从天涯海角赶来。它是勇者最忠实的伙伴。",
+        "skill": {
+            "name": "回旋斩",
+            "description": "勇者挥剑，攻击周围一圈敌人。 【效果：冻结首领 1 回合】",
+            "type": "arch_freeze",
+            "params": {
+                "damage": 550,
+                "turns": 1
+            }
+        },
+        "greeting": "忠诚陪伴情义深，不离不弃爱永恒。祝您得遇良友，一生相伴！"
+    },
+    {
+        "id": "clumsy_horse",
+        "name": "马大哈",
+        "level": 12,
+        "tier": 1,
+        "faction": "C",
+        "rarity": "N",
+        "description": "丢三落四的糊涂马。",
+        "origin": "俗语。",
+        "background": "这种马总是丢三落四，跑着跑着蹄铁就掉了。但据说捡到它丢的东西会有好运。",
+        "skill": {
+            "name": "掉落",
+            "description": "受击时有概率掉落 1 金币。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "amount": 120
+            }
+        },
+        "greeting": "傻人傻福运气好，开心就好烦恼少。祝您傻人有傻福，快乐每一天！"
+    },
+    {
+        "id": "toy_horse",
+        "name": "胡迪红心",
+        "level": 13,
+        "tier": 1,
+        "faction": "D",
+        "rarity": "N",
+        "description": "牛仔警长骑着布偶马。 (玩具总动员)",
+        "origin": "玩具总动员。",
+        "background": "警长的坐骑，虽然是布做的，但它比真马跑得还快（像风一样）。",
+        "skill": {
+            "name": "冲刺",
+            "description": "瞬间移动到空地。 【效果：生成 2 个低级单位】",
+            "type": "arch_summon",
+            "params": {
+                "damage": 650,
+                "count": 2
+            }
+        },
+        "greeting": "童心未泯快乐多，快乐常在笑口开。祝您初心不改，快乐常在！"
+    },
+    {
+        "id": "fake_dragon",
+        "name": "露马脚",
+        "level": 14,
+        "tier": 1,
+        "faction": "C",
+        "rarity": "N",
+        "description": "披着龙皮但露蹄子的假马。",
+        "origin": "成语。",
+        "background": "披着麒麟皮的驴。虽然伪装很拙劣，但它努力演出的样子很感人。",
+        "skill": {
+            "name": "破绽",
+            "description": "吸引敌人的火力（嘲讽）。 【效果：重排棋盘】",
+            "type": "arch_shuffle",
+            "params": {
+                "damage": 700
+            }
+        },
+        "greeting": "真诚待人得人心，坦坦荡荡路更宽。祝您活得真实，坦荡无畏！"
+    },
+    {
+        "id": "plumber_dino",
+        "name": "马里奥耀西",
+        "level": 15,
+        "tier": 1,
+        "faction": "D",
+        "rarity": "N",
+        "description": "水管工骑着绿色恐龙。",
+        "origin": "马里奥系列。",
+        "background": "它是恐龙，但它是水管工最好的马。它可以吃掉敌人，然后生下一个蛋。",
+        "skill": {
+            "name": "吞食",
+            "description": "吃掉一个低级敌人，转化为金币。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "amount": 150
+            }
+        },
+        "greeting": "胃口常开福气旺，消化良好体安康。祝您吃好喝好，身体倍棒！"
+    },
+    {
+        "id": "flattery_hand",
+        "name": "拍马屁",
+        "level": 16,
+        "tier": 1,
+        "faction": "C",
+        "rarity": "N",
+        "description": "一只手在拍马屁股。",
+        "origin": "俗语。",
+        "background": "这不是一匹马，这是一只正在拍马屁股的手。被它拍过的马，都会觉得自己无所不能。",
+        "skill": {
+            "name": "鼓舞",
+            "description": "提升一只友军马匹的攻击力。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "damage": 800,
+                "amount": 160
+            }
+        },
+        "greeting": "左右逢源人缘好，步步高升得重用。祝您人见人爱，花见花开！"
+    },
+    {
+        "id": "rock_horse",
+        "name": "洛克人马",
+        "level": 17,
+        "tier": 1,
+        "faction": "B",
+        "rarity": "N",
+        "description": "蓝色的机器人马。 (洛克人)",
+        "origin": "洛克人。",
+        "background": "装备了空气炮的机器人马。它能吸收敌人的能力。",
+        "skill": {
+            "name": "蓄力炮",
+            "description": "蓄力一回合，造成双倍伤害。 【效果：冻结首领 1 回合】",
+            "type": "arch_freeze",
+            "params": {
+                "damage": 850,
+                "turns": 1
+            }
+        },
+        "greeting": "能量满满动力足，蓄势待发创佳绩。祝您充满电量，勇往直前！"
+    },
+    {
+        "id": "sophist_white",
+        "name": "白马非马",
+        "level": 18,
+        "tier": 1,
+        "faction": "A",
+        "rarity": "N",
+        "description": "写着“非马”的抽象几何马。 (公孙龙)",
+        "origin": "公孙龙诡辩。",
+        "background": "它是一个哲学概念。当你试图攻击它时，它会论证自己不存在。",
+        "skill": {
+            "name": "虚无",
+            "description": "有 30% 概率闪避所有伤害。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 180
+            }
+        },
+        "greeting": "逻辑鬼才通百变，能言善辩得人心。祝您思维敏捷，得心应手！"
+    },
+    {
+        "id": "auntie_ma",
+        "name": "马冬梅",
+        "level": 19,
+        "tier": 1,
+        "faction": "C",
+        "rarity": "Hidden",
+        "description": "**[隐藏]** 大妈骑马，满头问号。 (夏洛特烦恼)",
+        "origin": "夏洛特烦恼。",
+        "background": "“马什么梅？”一位骑着马的大妈，她的耳背是她最强的防御。任何技能打在她身上都会被她听岔。",
+        "skill": {
+            "name": "打岔",
+            "description": "邻里吵架短片：大脑袋挡住 Boss，对白改成「马冬梅 / 马什么梅 / 你瞅啥呢」，障碍炸成拖鞋，Boss 冻 2 回合并作废预告。无 Boss 不放。",
+            "type": "sig_dacha",
+            "params": {}
+        },
+        "greeting": "没心没肺快乐多，糊里糊涂福气大。祝您难得糊涂，快乐至上！",
+        "recipeOnly": true
+    },
+    {
+        "id": "bole_sage",
+        "name": "伯乐相马",
+        "level": 20,
+        "tier": 1,
+        "faction": "A",
+        "rarity": "N",
+        "description": "老头牵着眼神犀利的瘦马。",
+        "origin": "伯乐与千里马。",
+        "background": "老头牵着一匹瘦马。看起来弱不禁风，其实那是未觉醒的神兽。",
+        "skill": {
+            "name": "慧眼",
+            "description": "提升合成出现高阶角色的概率。 【效果：清除低级单位】",
+            "type": "arch_clear_low",
+            "params": {
+                "damage": 1000
+            }
+        },
+        "greeting": "慧眼识珠遇贵人，千里良驹遇知音。祝您才华被赏识，遇难呈祥！"
+    },
+    {
+        "id": "unicorn",
+        "name": "独角兽",
+        "level": 21,
+        "tier": 2,
+        "faction": "D",
+        "rarity": "R",
+        "description": "洁白的螺旋角神兽。",
+        "origin": "西方神话。",
+        "background": "纯洁的象征。它的角可以净化水源，也能刺穿谎言。",
+        "skill": {
+            "name": "净化",
+            "description": "解除周围友军的负面状态。 【效果：净化负面状态】",
+            "type": "arch_heal",
+            "params": {}
+        },
+        "greeting": "纯洁美好心愿成，心想事成万事如。祝您心地纯良，美好相伴！"
+    },
+    {
+        "id": "wusun_sky",
+        "name": "乌孙天马",
+        "level": 22,
+        "tier": 2,
+        "faction": "A",
+        "rarity": "R",
+        "description": "汉代西域进贡的强壮天马。",
+        "origin": "汉代历史。",
+        "background": "来自西域的强壮马种，比中原马更高大。它是丝绸之路的开拓者。",
+        "skill": {
+            "name": "耐力",
+            "description": "每回合自动回复少量生命。 【效果：献祭自身，升级邻格】",
+            "type": "arch_upgrade",
+            "params": {
+                "damage": 1100,
+                "radius": 1
+            }
+        },
+        "greeting": "身体强健如天马，精力充沛干劲足。祝您体魄强健，精力旺盛！"
+    },
+    {
+        "id": "doctor_shock",
+        "name": "死马当活马",
+        "level": 23,
+        "tier": 2,
+        "faction": "C",
+        "rarity": "R",
+        "description": "拿着电击器的庸医马。",
+        "origin": "俗语。",
+        "background": "一位疯狂的马医生，手里拿着除颤仪。“不试试怎么知道救不活？”",
+        "skill": {
+            "name": "起搏",
+            "description": "复活一个刚刚死亡的友军（限一次）。 【效果：重排棋盘】",
+            "type": "arch_shuffle",
+            "params": {
+                "damage": 1150
+            }
+        },
+        "greeting": "绝处逢生转机现，奇迹发生梦成真。祝您起死回生，逆风翻盘！"
+    },
+    {
+        "id": "sweat_blood",
+        "name": "大宛汗血",
+        "level": 24,
+        "tier": 2,
+        "faction": "A",
+        "rarity": "R",
+        "description": "披着波斯毯、流血汗的贵族马。",
+        "origin": "汗血宝马。",
+        "background": "奔跑时流出的汗像鲜血一样。它是马中的贵族，身价连城。",
+        "skill": {
+            "name": "贵气",
+            "description": "战斗结束获得的金币 +20%。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "amount": 240
+            }
+        },
+        "greeting": "汗水浇灌成功花，功成名就享荣华。祝您付出有回报，功成名就！"
+    },
+    {
+        "id": "brake_cliff",
+        "name": "悬崖勒马",
+        "level": 25,
+        "tier": 2,
+        "faction": "C",
+        "rarity": "R",
+        "description": "在悬崖边急刹车的马。",
+        "origin": "成语。",
+        "background": "它的刹车片是世界顶级的。无论前方是深渊还是陷阱，它都能在最后一刻停住。",
+        "skill": {
+            "name": "急停",
+            "description": "免疫地刺陷阱伤害。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "damage": 1250,
+                "amount": 250
+            }
+        },
+        "greeting": "及时止损悟性高，回头是岸金不换。祝您审时度势，进退有度！"
+    },
+    {
+        "id": "fire_mane",
+        "name": "烈焰马",
+        "level": 26,
+        "tier": 2,
+        "faction": "B",
+        "rarity": "R",
+        "description": "浑身燃烧的火马。 (宝可梦)",
+        "origin": "宝可梦。",
+        "background": "奔跑起来就像一团移动的火球。只有被它认可的人才不会被烧伤。",
+        "skill": {
+            "name": "火焰漩涡",
+            "description": "持续灼烧周围敌人。 【效果：冻结首领 1 回合】",
+            "type": "arch_freeze",
+            "params": {
+                "damage": 1300,
+                "turns": 1
+            }
+        },
+        "greeting": "薪火相传业兴旺，生意兴隆通四海。祝您红红火火，蒸蒸日上！"
+    },
+    {
+        "id": "dilu_leap",
+        "name": "刘备的卢",
+        "level": 27,
+        "tier": 2,
+        "faction": "A",
+        "rarity": "R",
+        "description": "额有白斑，跃过檀溪。",
+        "origin": "三国演义。",
+        "background": "被认为妨主的凶马，却救了刘备一命。它证明了命运掌握在自己脚下。",
+        "skill": {
+            "name": "跃溪",
+            "description": "可以跳过障碍物移动。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 270
+            }
+        },
+        "greeting": "逢凶化吉运道旺，遇难呈祥福气多。祝您转危为安，好运连连！"
+    },
+    {
+        "id": "centaur_arc",
+        "name": "半人马射手",
+        "level": 28,
+        "tier": 2,
+        "faction": "D",
+        "rarity": "R",
+        "description": "森林里的神射手。",
+        "origin": "希腊神话。",
+        "background": "上半身是人，下半身是马。它们是森林的守护者，箭术百发百中。",
+        "skill": {
+            "name": "精准",
+            "description": "远程攻击，无视闪避。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 1400
+            }
+        },
+        "greeting": "箭无虚发中的准，目标达成捷报传。祝您有的放矢，百发百中！"
+    },
+    {
+        "id": "fiddle_horse",
+        "name": "马头琴",
+        "level": 29,
+        "tier": 2,
+        "faction": "C",
+        "rarity": "R",
+        "description": "拉琴的蒙古马，音波攻击。",
+        "origin": "蒙古传说。",
+        "background": "琴声中藏着万马奔腾的灵魂。它用音乐战斗，让敌人沉浸在思乡的哀愁中。",
+        "skill": {
+            "name": "安魂曲",
+            "description": "降低敌人的攻击力。 【效果：重排棋盘】",
+            "type": "arch_shuffle",
+            "params": {
+                "damage": 1450
+            }
+        },
+        "greeting": "琴声悠扬传万里，知音难觅情义真。祝您高山流水，得遇知音！"
+    },
+    {
+        "id": "stalchild",
+        "name": "骷髅马",
+        "level": 30,
+        "tier": 2,
+        "faction": "B",
+        "rarity": "R",
+        "description": "夜晚发光的骨架马。 (塞尔达)",
+        "origin": "塞尔达传说。",
+        "background": "在海拉鲁大陆的夜晚出没。虽然只剩骨头，但依然忠诚地等待骑手。",
+        "skill": {
+            "name": "重组",
+            "description": "被击碎后有几率复活。 【效果：重排棋盘】",
+            "type": "arch_shuffle",
+            "params": {}
+        },
+        "greeting": "不死之身显神通，卷土重来再出发。祝您生命力顽强，越挫越勇！"
+    },
+    {
+        "id": "shadow_fast",
+        "name": "曹操绝影",
+        "level": 31,
+        "tier": 2,
+        "faction": "A",
+        "rarity": "R",
+        "description": "快到看不见的黑影。",
+        "origin": "三国演义。",
+        "background": "曹操的爱马。因为它跑得太快，连影子都追不上它。",
+        "skill": {
+            "name": "极速",
+            "description": "增加 50% 闪避率。 【效果：献祭自身，升级邻格】",
+            "type": "arch_upgrade",
+            "params": {
+                "damage": 1550,
+                "radius": 1
+            }
+        },
+        "greeting": "来去无踪效率高，捷足先登占先机。祝您办事高效，快人一步！"
+    },
+    {
+        "id": "tourist_cam",
+        "name": "走马观花",
+        "level": 32,
+        "tier": 2,
+        "faction": "C",
+        "rarity": "R",
+        "description": "戴墨镜拍照的游客马。",
+        "origin": "成语。",
+        "background": "它不是来打仗的，它是来旅游的。戴着墨镜，背着相机，看见什么都想拍一张。",
+        "skill": {
+            "name": "拍照",
+            "description": "定住敌人 1 回合。无敌人时拍照获得金币。 【效果：冻结首领 1 回合】",
+            "type": "arch_freeze",
+            "params": {}
+        },
+        "greeting": "走遍天下眼界宽，看尽繁华心舒畅。祝您游遍山河，阅尽千帆！"
+    },
+    {
+        "id": "rainbow_fly",
+        "name": "彩虹云宝",
+        "level": 33,
+        "tier": 2,
+        "faction": "D",
+        "rarity": "R",
+        "description": "极速飞行的彩虹马。 (MLP)",
+        "origin": "小马宝莉。",
+        "background": "忠诚元素的代表。它飞过的地方会留下彩虹轨迹，速度快到能突破音障。",
+        "skill": {
+            "name": "音爆",
+            "description": "全屏震慑，击退所有敌人。 【效果：清除周围 3×3 区域】",
+            "type": "arch_bomb",
+            "params": {
+                "radius": 1
+            }
+        },
+        "greeting": "多姿多彩生活美，生活如虹映日红。祝您生活多彩，绚丽多姿！"
+    },
+    {
+        "id": "sick_yellow",
+        "name": "秦琼黄骠",
+        "level": 34,
+        "tier": 2,
+        "faction": "A",
+        "rarity": "R",
+        "description": "病恹恹但爆发力强的马。",
+        "origin": "隋唐演义。",
+        "background": "看起来瘦骨嶙峋，其实是“透骨龙”。只有在真正懂马的英雄秦琼手里，它才展现出神力。",
+        "skill": {
+            "name": "爆发",
+            "description": "血量越低，攻击越高。 【效果：献祭自身，升级邻格】",
+            "type": "arch_upgrade",
+            "params": {
+                "damage": 1700,
+                "radius": 1
+            }
+        },
+        "greeting": "绝地反击显本色，后劲勃发占鳌头。祝您逆境翻盘，越战越勇！"
+    },
+    {
+        "id": "slow_dancer",
+        "name": "乔尼慢舞",
+        "level": 35,
+        "tier": 2,
+        "faction": "B",
+        "rarity": "R",
+        "description": "瘫痪骑手与白斑马。 (JOJO SBR)",
+        "origin": "JOJO SBR。",
+        "background": "乔尼·乔斯达的坐骑。虽然名字叫“慢舞”，但它承载着无限的回旋之力。",
+        "skill": {
+            "name": "黄金回旋",
+            "description": "攻击必定暴击。 【效果：冻结首领 1 回合】",
+            "type": "arch_freeze",
+            "params": {
+                "damage": 1750,
+                "turns": 1
+            }
+        },
+        "greeting": "黄金精神永传承，永不言弃创奇迹。祝您百折不挠，终抵终点！"
+    },
+    {
+        "id": "cannon_back",
+        "name": "马后炮",
+        "level": 36,
+        "tier": 2,
+        "faction": "C",
+        "rarity": "R",
+        "description": "背着巨大象棋炮的马。",
+        "origin": "象棋/俗语。",
+        "background": "背着一门巨大的象棋“炮”。虽然总是事后诸葛亮，但这发炮弹是真的疼。",
+        "skill": {
+            "name": "隔山打牛",
+            "description": "攻击后方的一名敌人。 【效果：随机变化同阶角色】",
+            "type": "arch_transform",
+            "params": {
+                "damage": 1800
+            }
+        },
+        "greeting": "总结经验智慧长，再创辉煌业更强。祝您厚积薄发，一鸣惊人！"
+    },
+    {
+        "id": "black_roar",
+        "name": "张飞王追",
+        "level": 37,
+        "tier": 2,
+        "faction": "A",
+        "rarity": "R",
+        "description": "乌黑如墨的猛张飞坐骑。",
+        "origin": "三国演义。",
+        "background": "又名乌骓（不同于项羽那匹）。人猛马也黑，一声咆哮能吓退百万雄兵。",
+        "skill": {
+            "name": "咆哮",
+            "description": "使周围敌人恐惧逃跑。 【效果：献祭自身，升级邻格】",
+            "type": "arch_upgrade",
+            "params": {
+                "damage": 1850,
+                "radius": 1
+            }
+        },
+        "greeting": "勇猛精进破万难，势不可挡开新篇。祝您气势如虹，无往不利！"
+    },
+    {
+        "id": "dark_prince",
+        "name": "黑马王子",
+        "level": 38,
+        "tier": 2,
+        "faction": "D",
+        "rarity": "R",
+        "description": "骑黑马的帅气王子。",
+        "origin": "童话反套路。",
+        "background": "骑白马的不一定是王子，可能是唐僧；但骑黑马的王子一定很酷。",
+        "skill": {
+            "name": "魅力",
+            "description": "魅惑敌人，使其停止攻击。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 380
+            }
+        },
+        "greeting": "魅力无限人缘好，邂逅良缘结同心。祝您桃花朵朵，幸福美满！"
+    },
+    {
+        "id": "black_sheep",
+        "name": "害群之马",
+        "level": 39,
+        "tier": 2,
+        "faction": "C",
+        "rarity": "R",
+        "description": "招苍蝇的坏笑黑马。",
+        "origin": "成语。",
+        "background": "一匹混在白马群里的黑马，总是带着坏笑。只要有它在，整个队伍都会变得不正经。",
+        "skill": {
+            "name": "捣乱",
+            "description": "随机交换场上两枚棋子的位置。 【效果：随机变化同阶角色】",
+            "type": "arch_transform",
+            "params": {}
+        },
+        "greeting": "独树一帜个性显，与众不同展锋芒。祝您特立独行，做不一样的烟火！"
+    },
+    {
+        "id": "cow_horse",
+        "name": "牛马打工人",
+        "level": 40,
+        "tier": 2,
+        "faction": "C",
+        "rarity": "Hidden",
+        "description": "**[隐藏]** 牛头马面，穿着西装搬砖。 (谐音梗)",
+        "origin": "网络梗“做牛做马”。",
+        "background": "长着牛头马面的怪物，穿着廉价西装，提着公文包。它的怨气比鬼神还重。",
+        "skill": {
+            "name": "加班",
+            "description": "日光灯闪两下，顶出「996 已读」。自己所在行（纵向滑动则改列）往滑动方向加班合一轮，不刷子。合完盖上「再加半小时」。线上不能合不放。",
+            "type": "sig_jiaban",
+            "params": {}
+        },
+        "greeting": "勤劳致富家业兴，苦尽甘来福满门。祝您付出终有报，早日财富自由！",
+        "recipeOnly": true
+    },
+    {
+        "id": "eight_kings",
+        "name": "穆王八骏",
+        "level": 41,
+        "tier": 3,
+        "faction": "A",
+        "rarity": "SR",
+        "description": "八匹小马拉的豪华战车。",
+        "origin": "周穆王传说。",
+        "background": "八匹神驹拉的战车，载着周穆王巡游天下，甚至见过西王母。",
+        "skill": {
+            "name": "巡游",
+            "description": "移动时获得金币。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "amount": 410
+            }
+        },
+        "greeting": "勇往直前无阻挡，所向披靡立头功。祝您团队协作，合力断金！"
+    },
+    {
+        "id": "monkey_mind",
+        "name": "心猿意马",
+        "level": 42,
+        "tier": 3,
+        "faction": "C",
+        "rarity": "SR",
+        "description": "猴子骑马，方向不一。",
+        "origin": "成语。",
+        "background": "一只猴子骑在马上，手里还拿着金箍棒。猴子指东，马往西，主打一个随心所欲。",
+        "skill": {
+            "name": "随机应变",
+            "description": "每次攻击附带随机特效（冰冻、燃烧或眩晕）。 【效果：随机变化同阶角色】",
+            "type": "arch_transform",
+            "params": {
+                "damage": 2100
+            }
+        },
+        "greeting": "思维活跃点子多，创意无限脑洞开。祝您才思泉涌，奇思妙想！"
+    },
+    {
+        "id": "valkyrie_steel",
+        "name": "杰洛女武神",
+        "level": 43,
+        "tier": 3,
+        "faction": "B",
+        "rarity": "SR",
+        "description": "扔铁球的牛仔骑手。 (JOJO SBR)",
+        "origin": "JOJO SBR。",
+        "background": "杰洛·齐贝林的爱马。它懂得配合主人的铁球回旋，踏出黄金长方形的轨迹。",
+        "skill": {
+            "name": "铁球投掷",
+            "description": "远程单体高伤。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 2150
+            }
+        },
+        "greeting": "勇往直前破陈规，打破常规创新路。祝您敢想敢干，勇闯天涯！"
+    },
+    {
+        "id": "sand_storm",
+        "name": "马超里飞沙",
+        "level": 44,
+        "tier": 3,
+        "faction": "A",
+        "rarity": "SR",
+        "description": "裹挟沙尘暴的西凉铁骑。",
+        "origin": "三国演义。",
+        "background": "西凉锦马超的坐骑。跑起来像沙尘暴一样，所到之处飞沙走石。",
+        "skill": {
+            "name": "风沙",
+            "description": "全屏造成持续沙尘伤害。 【效果：清除低级单位】",
+            "type": "arch_clear_low",
+            "params": {
+                "damage": 2200
+            }
+        },
+        "greeting": "席卷八方威名扬，建功立业正当时。祝您雷厉风行，大展宏图！"
+    },
+    {
+        "id": "nightmare",
+        "name": "梦魇兽",
+        "level": 45,
+        "tier": 3,
+        "faction": "D",
+        "rarity": "SR",
+        "description": "燃烧绿火的地狱战马。 (D&D)",
+        "origin": "D&D / 欧美奇幻。",
+        "background": "来自地狱维度的战马，四蹄踏着绿色的邪能火焰。",
+        "skill": {
+            "name": "穿墙",
+            "description": "可以穿过墙壁和障碍物。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 2250
+            }
+        },
+        "greeting": "噩梦退散迎曙光，美梦成真乐无边。祝您远离梦魇，美梦连连！"
+    },
+    {
+        "id": "giant_ganon",
+        "name": "巨型加农马",
+        "level": 46,
+        "tier": 3,
+        "faction": "B",
+        "rarity": "SR",
+        "description": "体型巨大的红发黑马。 (塞尔达)",
+        "origin": "塞尔达传说。",
+        "background": "只有魔王加农才能驾驭的巨型黑马，体型是普通马的三倍，拥有碾压一切的力量。",
+        "skill": {
+            "name": "碾压",
+            "description": "直接踩死脚下的小型单位。 【效果：清除周围 3×3 区域】",
+            "type": "arch_bomb",
+            "params": {
+                "damage": 2300,
+                "radius": 1
+            }
+        },
+        "greeting": "气场强大震四方，威震四方显霸气。祝您气场全开，镇得住场！"
+    },
+    {
+        "id": "ink_white",
+        "name": "玄宗照夜白",
+        "level": 47,
+        "tier": 3,
+        "faction": "A",
+        "rarity": "SR",
+        "description": "水墨画风格的发光白马。",
+        "origin": "名画《照夜白图》。",
+        "background": "唐玄宗的爱马。它不是实物，而是从水墨画中走出来的灵物，浑身散发着白光。",
+        "skill": {
+            "name": "画壁",
+            "description": "将一个敌人变成静止的水墨画。 【效果：清除低级单位】",
+            "type": "arch_clear_low",
+            "params": {
+                "damage": 2350
+            }
+        },
+        "greeting": "前途光明路坦荡，心如明镜智慧增。祝您前程似锦，光彩照人！"
+    },
+    {
+        "id": "solo_lancer",
+        "name": "单枪匹马",
+        "level": 48,
+        "tier": 3,
+        "faction": "C",
+        "rarity": "SR",
+        "description": "一杆枪一匹马的孤胆英雄。",
+        "origin": "成语。",
+        "background": "没有援军，没有后勤。一匹马，一杆枪，面对千军万马。孤胆英雄的极致。",
+        "skill": {
+            "name": "孤勇",
+            "description": "周围没有友军时，攻击力翻倍。 【效果：随机变化同阶角色】",
+            "type": "arch_transform",
+            "params": {
+                "damage": 2400
+            }
+        },
+        "greeting": "独当一面挑大梁，英雄本色显担当。祝您独具匠心，独领风骚！"
+    },
+    {
+        "id": "ghost_rider",
+        "name": "灵幽马",
+        "level": 49,
+        "tier": 3,
+        "faction": "B",
+        "rarity": "SR",
+        "description": "紫黑色的幽灵马。 (宝可梦)",
+        "origin": "宝可梦（剑盾）。",
+        "background": "喜欢吃农作物的幽灵马。它的嘶鸣能让灵魂颤抖。",
+        "skill": {
+            "name": "暗影球",
+            "description": "发射暗影能量，无视护盾。 【效果：清除周围 3×3 区域】",
+            "type": "arch_bomb",
+            "params": {
+                "damage": 2450,
+                "radius": 1
+            }
+        },
+        "greeting": "魅力四射引人迷，神秘莫测展风采。祝您魅力值拉满，大放异彩！"
+    },
+    {
+        "id": "arrow_chest",
+        "name": "太宗飒露紫",
+        "level": 50,
+        "tier": 3,
+        "faction": "A",
+        "rarity": "SR",
+        "description": "胸口中箭的坚毅战马。",
+        "origin": "昭陵六骏。",
+        "background": "李世民的战马。胸前中箭，却依然屹立不倒。丘行恭正在为它拔箭。",
+        "skill": {
+            "name": "坚毅",
+            "description": "受到致命伤时保留 1 点血。 【效果：清除低级单位】",
+            "type": "arch_clear_low",
+            "params": {
+                "damage": 2500
+            }
+        },
+        "greeting": "坚韧不拔成大器，百折不挠创辉煌。祝您意志坚定，无坚不摧！"
+    },
+    {
+        "id": "don_quixote",
+        "name": "罗辛南特",
+        "level": 51,
+        "tier": 3,
+        "faction": "D",
+        "rarity": "SR",
+        "description": "冲向风车的瘦马骑士。 (堂吉诃德)",
+        "origin": "堂吉诃德。",
+        "background": "一匹瘦骨嶙峋的老马，但在骑士堂吉诃德眼里，它是世上最骏美的战马。理想主义的象征。",
+        "skill": {
+            "name": "冲锋",
+            "description": "对着巨大的敌人（如Boss）发起无畏冲锋。 【效果：净化负面状态】",
+            "type": "arch_heal",
+            "params": {
+                "damage": 2550
+            }
+        },
+        "greeting": "理想主义光芒照，坚持到底梦成真。祝您坚守初心，梦想成真！"
+    },
+    {
+        "id": "toilet_head",
+        "name": "马桶MT",
+        "level": 52,
+        "tier": 3,
+        "faction": "C",
+        "rarity": "Hidden",
+        "description": "**[隐藏]** 马桶里伸出的鬼畜马头。 (Skibidi)",
+        "origin": "Skibidi Toilet。",
+        "background": "从马桶里伸出的鬼畜马头，唱着洗脑的歌。这是一种精神污染，也是一种模因病毒。",
+        "skill": {
+            "name": "精神污染",
+            "description": "瞄准 3×3，棋子绕中心转一圈再互换身份，等级不变、人全乱。可换不足 2 只不放。",
+            "type": "sig_pollute",
+            "params": {}
+        },
+        "greeting": "辞旧迎新除旧秽，冲走霉运迎吉祥。祝您烦恼全消，神清气爽！",
+        "recipeOnly": true
+    },
+    {
+        "id": "android_cen",
+        "name": "半人马兽",
+        "level": 53,
+        "tier": 3,
+        "faction": "B",
+        "rarity": "SR",
+        "description": "改造人马，手臂是机炮。 (数码宝贝)",
+        "origin": "数码宝贝。",
+        "background": "守护遗迹的半人马型数码兽。右臂被改造成了巨大的加农炮。",
+        "skill": {
+            "name": "猎杀加农",
+            "description": "锁定血量最低的敌人进行必杀。 【效果：冻结首领 1 回合】",
+            "type": "arch_freeze",
+            "params": {
+                "damage": 2650,
+                "turns": 1
+            }
+        },
+        "greeting": "火力全开事业旺，百发百中目标成。祝您弹无虚发，目标必达！"
+    },
+    {
+        "id": "gold_hoof",
+        "name": "曹操爪黄",
+        "level": 54,
+        "tier": 3,
+        "faction": "A",
+        "rarity": "SR",
+        "description": "金色蹄子的贵族马。",
+        "origin": "爪黄飞电。",
+        "background": "曹操凯旋时骑的马。气质高贵，四蹄金黄，仿佛踩着闪电。",
+        "skill": {
+            "name": "威慑",
+            "description": "降低周围敌人的攻击欲望。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 540
+            }
+        },
+        "greeting": "气宇轩昂人中龙，贵人相助事事成。祝您气质高雅，贵气逼人！"
+    },
+    {
+        "id": "trojan_wood",
+        "name": "特洛伊木马",
+        "level": 55,
+        "tier": 3,
+        "faction": "D",
+        "rarity": "SR",
+        "description": "藏着士兵的巨大木马。",
+        "origin": "荷马史诗。",
+        "background": "巨大的木制马，肚子里藏着希腊联军。它是战争史上最大的骗局。",
+        "skill": {
+            "name": "伏兵",
+            "description": "死亡时爆出 3 个小兵（Lv.5 秦俑马）。 【效果：生成 2 个低级单位】",
+            "type": "arch_summon",
+            "params": {}
+        },
+        "greeting": "满载而归收获丰，惊喜连连运道旺。祝您惊喜不断，满载而归！"
+    },
+    {
+        "id": "ice_glacier",
+        "name": "雪暴马",
+        "level": 56,
+        "tier": 3,
+        "faction": "B",
+        "rarity": "SR",
+        "description": "冰晶覆盖的极寒马。 (宝可梦)",
+        "origin": "宝可梦（剑盾）。",
+        "background": "能够制造暴风雪的传说宝可梦。所到之处，万物冻结。",
+        "skill": {
+            "name": "冰封世界",
+            "description": "冻结全屏敌人。 【效果：冻结首领 1 回合】",
+            "type": "arch_freeze",
+            "params": {}
+        },
+        "greeting": "冰雪聪明解难题，冷静沉着胜千里。祝您头脑冷静，决策英明！"
+    },
+    {
+        "id": "recruiter_hr",
+        "name": "招兵买马",
+        "level": 57,
+        "tier": 3,
+        "faction": "C",
+        "rarity": "SR",
+        "description": "拿喇叭发钱的西装马。",
+        "origin": "成语。",
+        "background": "拿着扩音器和一箱子钱的西装马。“来吧，加入我们，包吃包住！”",
+        "skill": {
+            "name": "雇佣",
+            "description": "花费金币召唤低级马匹填充空位。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "amount": 570
+            }
+        },
+        "greeting": "人才济济事业兴，团队壮大力量强。祝您广纳贤才，兵强马壮！"
+    },
+    {
+        "id": "silver_lion",
+        "name": "赵云照夜玉",
+        "level": 58,
+        "tier": 3,
+        "faction": "A",
+        "rarity": "SR",
+        "description": "银甲赵云与雪白狮子马。",
+        "origin": "照夜玉狮子。",
+        "background": "随赵云在长坂坡七进七出。通体雪白，脖子上的鬃毛像狮子一样威风凛凛。",
+        "skill": {
+            "name": "龙胆",
+            "description": "攻击时有几率触发连击。 【效果：献祭自身，升级邻格】",
+            "type": "arch_upgrade",
+            "params": {
+                "damage": 2900,
+                "radius": 1
+            }
+        },
+        "greeting": "七进七出显神威，浑身是胆闯天下。祝您胆大心细，闯出一片天！"
+    },
+    {
+        "id": "pegasus_fly",
+        "name": "天马",
+        "level": 59,
+        "tier": 3,
+        "faction": "D",
+        "rarity": "SR",
+        "description": "长翅膀的飞马。 (希腊神话)",
+        "origin": "希腊神话。",
+        "background": "英雄珀尔修斯的坐骑。它展开双翼，飞向奥林匹斯山。",
+        "skill": {
+            "name": "飞翔",
+            "description": "无视地形，可以停留在水面或岩浆上。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 2950
+            }
+        },
+        "greeting": "展翅高飞鹏程远，鹏程万里任翱翔。祝您大展宏图，一飞冲天！"
+    },
+    {
+        "id": "dino_racer",
+        "name": "迪亚哥银色",
+        "level": 60,
+        "tier": 3,
+        "faction": "B",
+        "rarity": "SR",
+        "description": "变身恐龙的赛马手。 (JOJO SBR)",
+        "origin": "JOJO SBR。",
+        "background": "迪亚哥·布兰度的爱马“银色子弹”。它的主人可以变身恐龙，它也沾染了野性的气息。",
+        "skill": {
+            "name": "骇人恶兽",
+            "description": "变身恐龙形态，大幅提升攻击力。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 600
+            }
+        },
+        "greeting": "野性回归活力足，充满活力闯四方。祝您生龙活虎，野蛮生长！"
+    },
+    {
+        "id": "old_guide",
+        "name": "老马识途",
+        "level": 61,
+        "tier": 4,
+        "faction": "C",
+        "rarity": "SR",
+        "description": "戴老花镜看地图的向导。",
+        "origin": "成语。",
+        "background": "经验丰富的老马。它不需要地图，它走过的路就是地图。",
+        "skill": {
+            "name": "导航",
+            "description": "直接显示通往下一关的正确路径或隐藏宝箱。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "damage": 3050,
+                "amount": 610
+            }
+        },
+        "greeting": "经验丰富少走弯，指路明灯引航向。祝您老当益壮，指点迷津！"
+    },
+    {
+        "id": "holy_angemon",
+        "name": "独角马兽",
+        "level": 62,
+        "tier": 4,
+        "faction": "B",
+        "rarity": "SR",
+        "description": "带面具的飞翼独角兽。 (数码宝贝)",
+        "origin": "数码宝贝。",
+        "background": "长着翅膀的独角兽。它可以发射神圣气泡，治愈伤痛。",
+        "skill": {
+            "name": "神圣治疗",
+            "description": "回复全队大量生命值。 【效果：净化负面状态】",
+            "type": "arch_heal",
+            "params": {}
+        },
+        "greeting": "治愈人心送温暖，温暖如春福满堂。祝您身心健康，温暖常在！"
+    },
+    {
+        "id": "golden_steed",
+        "name": "汗血宝马",
+        "level": 63,
+        "tier": 4,
+        "faction": "A",
+        "rarity": "SR",
+        "description": "金色流血汗的顶级名马。",
+        "origin": "历史名马。",
+        "background": "传说中能日行千里的天马。它的皮肤薄如蝉翼，血管清晰可见，流汗如血。",
+        "skill": {
+            "name": "极速奔跑",
+            "description": "连续行动两次。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 630
+            }
+        },
+        "greeting": "热情似火日子旺，红红火火福运长。祝您激情澎湃，生活红火！"
+    },
+    {
+        "id": "royal_white",
+        "name": "白马王族",
+        "level": 64,
+        "tier": 4,
+        "faction": "D",
+        "rarity": "SR",
+        "description": "塞尔达公主的皇家白马。",
+        "origin": "塞尔达传说。",
+        "background": "只有王室成员才能骑乘的白马，佩戴着金色的马具。高贵而优雅。",
+        "skill": {
+            "name": "王室威严",
+            "description": "周围敌人攻击力减半。 【效果：生成 2 个低级单位】",
+            "type": "arch_summon",
+            "params": {
+                "damage": 3200,
+                "count": 2
+            }
+        },
+        "greeting": "尊贵典雅气质佳，气质非凡万人迷。祝您高贵优雅，气质出众！"
+    },
+    {
+        "id": "lost_found",
+        "name": "塞翁失马",
+        "level": 65,
+        "tier": 4,
+        "faction": "C",
+        "rarity": "SR",
+        "description": "望着虚线马影的老翁。",
+        "origin": "成语。",
+        "background": "站在边境的老翁。他的马跑了，带回来一群马；儿子摔断腿，却躲过了兵役。他是运气管理大师。",
+        "skill": {
+            "name": "福祸相依",
+            "description": "受到伤害时，有 50% 概率回复等量生命。 【效果：重排棋盘】",
+            "type": "arch_shuffle",
+            "params": {
+                "damage": 3250
+            }
+        },
+        "greeting": "因祸得福运道转，否极泰来喜事连。祝您坏事变好事，好事变喜事！"
+    },
+    {
+        "id": "skull_king",
+        "name": "骷髅骑士",
+        "level": 66,
+        "tier": 4,
+        "faction": "B",
+        "rarity": "SSR",
+        "description": "斩断因果的骷髅王。 (剑风传奇)",
+        "origin": "剑风传奇。",
+        "background": "骑着骷髅战马的神秘骑士，手持唤水之剑。他穿梭于幽界，斩断因果。",
+        "skill": {
+            "name": "次元斩",
+            "description": "秒杀非 Boss 敌人。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 660
+            }
+        },
+        "greeting": "斩断因果破迷局，把握命运掌乾坤。祝您主宰命运，破局而出！"
+    },
+    {
+        "id": "patriot_yue",
+        "name": "岳飞白龙",
+        "level": 67,
+        "tier": 4,
+        "faction": "A",
+        "rarity": "SR",
+        "description": "刺字“精忠报国”的战马。",
+        "origin": "岳飞坐骑。",
+        "background": "虽然不是龙，但在岳家军心中，它就是白龙。背上刺着“精忠报国”。",
+        "skill": {
+            "name": "撼山",
+            "description": "攻击附带眩晕效果。 【效果：献祭自身，升级邻格】",
+            "type": "arch_upgrade",
+            "params": {
+                "damage": 3350,
+                "radius": 1
+            }
+        },
+        "greeting": "精忠报国志向远，浩气长存天地间。祝您忠诚可靠，受人敬仰！"
+    },
+    {
+        "id": "coder_feng",
+        "name": "二马弟弟",
+        "level": 68,
+        "tier": 4,
+        "faction": "C",
+        "rarity": "Hidden",
+        "description": "**[隐藏]** 忧郁的C++算法人马。 (现实朋友)",
+        "origin": "现实朋友梗。",
+        "background": "这是一个懂 C++ 的半人马。他戴着耳机，敲着悬浮键盘，眼神里透着代码跑通的疲惫与欣慰。",
+        "skill": {
+            "name": "Debug",
+            "description": "全屏绿字终端清掉冰和墙，按方向压实，数量最多的那一级盖上「PR MERGED」并自动合掉一对。无异常且无可合对不放。",
+            "type": "sig_debug",
+            "params": {}
+        },
+        "greeting": "代码零报错，人生无Bug。祝您逻辑通顺，运行完美！",
+        "recipeOnly": true
+    },
+    {
+        "id": "alexander_mt",
+        "name": "布赛法拉斯",
+        "level": 69,
+        "tier": 4,
+        "faction": "D",
+        "rarity": "SR",
+        "description": "亚历山大大帝的牛头印记马。",
+        "origin": "亚历山大大帝。",
+        "background": "只有亚历山大能驯服的烈马。它的前额有一个牛头印记。它陪伴主人征服了世界。",
+        "skill": {
+            "name": "征服",
+            "description": "占领格子，使在该格子上的友军攻击力提升。 【效果：净化负面状态】",
+            "type": "arch_heal",
+            "params": {
+                "damage": 3450
+            }
+        },
+        "greeting": "征服世界雄心大，雄心壮志创伟业。祝您雄霸天下，功成名就！"
+    },
+    {
+        "id": "deer_sign",
+        "name": "指鹿为马",
+        "level": 70,
+        "tier": 4,
+        "faction": "C",
+        "rarity": "SR",
+        "description": "挂着马牌子的梅花鹿。 (赵高)",
+        "origin": "赵高典故。",
+        "background": "这是一只鹿，但它挂着“我是马”的牌子。既然大家都说是马，那它就是马。",
+        "skill": {
+            "name": "混淆",
+            "description": "将强力敌人变成鹿。无敌人时随机变换一个单位。 【效果：随机变化同阶角色】",
+            "type": "arch_transform",
+            "params": {}
+        },
+        "greeting": "掌握话语权在手，指点江山意气豪。祝您言出法随，一言九鼎！"
+    },
+    {
+        "id": "orange_mecha",
+        "name": "斯雷普尼尔",
+        "level": 71,
+        "tier": 4,
+        "faction": "B",
+        "rarity": "SR",
+        "description": "四足橙色机甲。 (骑士魔法)",
+        "origin": "骑士&魔法 / Aldnoah Zero。",
+        "background": "并不是神话里的那匹，而是橙色的多足机甲。它拥有惊人的机动性和火力。",
+        "skill": {
+            "name": "全弹发射",
+            "description": "对全屏敌人造成导弹伤害。 【效果：冻结首领 1 回合】",
+            "type": "arch_freeze",
+            "params": {
+                "damage": 3550,
+                "turns": 1
+            }
+        },
+        "greeting": "稳步前行根基固，多管齐下事事成。祝您稳扎稳打，多点开花！"
+    },
+    {
+        "id": "stone_six",
+        "name": "昭陵六骏",
+        "level": 72,
+        "tier": 4,
+        "faction": "A",
+        "rarity": "SR",
+        "description": "六匹石刻战马复活。",
+        "origin": "唐代石刻。",
+        "background": "飒露紫、拳毛騧、白蹄乌、特勒骠、青骓、什伐赤。六匹石马合体，为了守护大唐荣耀而战。",
+        "skill": {
+            "name": "石阵",
+            "description": "召唤石墙阻挡敌人。 【效果：生成 2 个低级单位】",
+            "type": "arch_summon",
+            "params": {}
+        },
+        "greeting": "风驰电掣捷报传，快人一步占鳌头。祝您神速进取，抢占先机！"
+    },
+    {
+        "id": "tiger_patch",
+        "name": "马马虎虎",
+        "level": 73,
+        "tier": 4,
+        "faction": "C",
+        "rarity": "SR",
+        "description": "半马半虎的拼接布偶。",
+        "origin": "成语。",
+        "background": "这是一个缝合怪。马的身体，缝上了老虎的头和爪子。虽然做工粗糙，但意外地很萌。",
+        "skill": {
+            "name": "虎威",
+            "description": "吓跑低级敌人。 【效果：清除低级单位】",
+            "type": "arch_clear_low",
+            "params": {}
+        },
+        "greeting": "难得糊涂福气多，快乐至上笑呵呵。祝您大智若愚，乐得逍遥！"
+    },
+    {
+        "id": "hope_armor",
+        "name": "天马兽",
+        "level": 74,
+        "tier": 4,
+        "faction": "B",
+        "rarity": "SR",
+        "description": "金色装甲进化的希望之马。 (数码宝贝)",
+        "origin": "数码宝贝。",
+        "background": "巴达兽使用希望装甲进化的形态。金色的铠甲，神圣的力量。",
+        "skill": {
+            "name": "希望之光",
+            "description": "对暗属性敌人造成三倍伤害。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 3700
+            }
+        },
+        "greeting": "金光闪闪财运来，财运亨通富贵长。祝您希望常在，金碧辉煌！"
+    },
+    {
+        "id": "prophet_x",
+        "name": "克桑托斯",
+        "level": 75,
+        "tier": 4,
+        "faction": "D",
+        "rarity": "SR",
+        "description": "会说话的预言马。 (阿喀琉斯)",
+        "origin": "希腊神话。",
+        "background": "阿喀琉斯的另一匹神马。它不仅不死，还会说话，甚至预言了主人的死亡（然后被神禁言了）。",
+        "skill": {
+            "name": "预知",
+            "description": "预知 Boss 的下一次攻击位置。 【效果：净化负面状态】",
+            "type": "arch_heal",
+            "params": {
+                "damage": 3750
+            }
+        },
+        "greeting": "先知先觉早筹谋，料事如神胜算高。祝您高瞻远瞩，运筹帷幄！"
+    },
+    {
+        "id": "king_suicide",
+        "name": "项羽乌骓",
+        "level": 76,
+        "tier": 4,
+        "faction": "A",
+        "rarity": "SSR",
+        "description": "悲壮的霸王与黑马。",
+        "origin": "霸王别姬。",
+        "background": "“时不利兮骓不逝”。它不愿独活，随霸王而去。这是史上最深情、最悲壮的马。",
+        "skill": {
+            "name": "背水一战",
+            "description": "生命值归零时，爆炸对周围造成巨大伤害。 【效果：献祭自身，升级邻格】",
+            "type": "arch_upgrade",
+            "params": {
+                "damage": 3800,
+                "radius": 1
+            }
+        },
+        "greeting": "霸王之气震四方，情深义重传千古。祝您重情重义，顶天立地！"
+    },
+    {
+        "id": "gundam_kim",
+        "name": "锡蒙利高达",
+        "level": 77,
+        "tier": 4,
+        "faction": "B",
+        "rarity": "SR",
+        "description": "四脚着地的半人马高达。 (铁血孤儿)",
+        "origin": "高达铁血的奥尔芬斯。",
+        "background": "锡蒙利骑兵型。它有着类似半人马的变形结构，手持巨大的长枪，推进力惊人。",
+        "skill": {
+            "name": "骑兵冲刺",
+            "description": "向前冲刺，击退路径上所有敌人。 【效果：清除周围 3×3 区域】",
+            "type": "arch_bomb",
+            "params": {
+                "radius": 1
+            }
+        },
+        "greeting": "铁血冲锋势如虹，一往无前建奇功。祝您势如破竹，锐不可当！"
+    },
+    {
+        "id": "pixel_censor",
+        "name": "马赛克",
+        "level": 78,
+        "tier": 4,
+        "faction": "C",
+        "rarity": "Hidden",
+        "description": "**[隐藏]** 全身打码的神秘马。",
+        "origin": "玩梗。",
+        "background": "全身由巨大的像素块组成，你看不清它的脸。它是为了保护隐私而生的神兽。",
+        "skill": {
+            "name": "屏蔽",
+            "description": "瞄准 3×3 先变成粗马赛克，「和谐」章砸进圈心，普通棋和可见障碍被抹掉。自己/保护/Hidden/Boss 留下。圈空不放。",
+            "type": "sig_censor",
+            "params": {}
+        },
+        "greeting": "难得糊涂是智慧，自在逍遥乐无忧。祝您大智若愚，逍遥自在！",
+        "recipeOnly": true
+    },
+    {
+        "id": "shadowfax",
+        "name": "捷影",
+        "level": 79,
+        "tier": 4,
+        "faction": "D",
+        "rarity": "SSR",
+        "description": "灰袍巫师的马中之王。 (指环王)",
+        "origin": "指环王。",
+        "background": "“马中之王”。它通体雪白，像银色的影子。只有甘道夫能驾驭它奔跑在中古大陆。",
+        "skill": {
+            "name": "光速",
+            "description": "移动不消耗行动点数。 【效果：生成 2 个低级单位】",
+            "type": "arch_summon",
+            "params": {
+                "damage": 3950,
+                "count": 2
+            }
+        },
+        "greeting": "迅捷如风效率高，光芒万丈照前程。祝您行动迅速，前途光明！"
+    },
+    {
+        "id": "mobile_horse",
+        "name": "风云再起",
+        "level": 80,
+        "tier": 4,
+        "faction": "B",
+        "rarity": "SSR",
+        "description": "高达驾驶的马形高达。 (G高达)",
+        "origin": "机动武斗传G高达。",
+        "background": "这是一匹真的马，但它驾驶着一台马形的机动战士。它是高达的坐骑，也是高达本身。",
+        "skill": {
+            "name": "石破天惊",
+            "description": "人马合一：邻格全部进阶，清掉首领障碍，重创并冻结首领 1 回合。",
+            "type": "sig_sekiba",
+            "params": {
+                "damage": 4000
+            }
+        },
+        "greeting": "心如止水境界高，境界超凡入圣地。祝您心态平和，境界高远！"
+    },
+    {
+        "id": "west_team",
+        "name": "取经天团",
+        "level": 81,
+        "tier": 5,
+        "faction": "A",
+        "rarity": "SSR",
+        "description": "唐僧骑白马，影子是龙。 (西游记)",
+        "origin": "西游记。",
+        "background": "唐僧骑着白马，白马的影子是一条龙。这是师徒四人（加马）意志的集合体，向着西方前进。",
+        "skill": {
+            "name": "佛光普照",
+            "description": "全屏回血并净化所有负面状态。 【效果：净化负面状态】",
+            "type": "arch_heal",
+            "params": {}
+        },
+        "greeting": "修成正果登金榜，金榜题名步步高。祝您历经磨砺，终成大器！"
+    },
+    {
+        "id": "magic_paint",
+        "name": "神笔马良",
+        "level": 82,
+        "tier": 5,
+        "faction": "C",
+        "rarity": "Hidden",
+        "description": "**[隐藏]** 画什么有什么的神笔少年。",
+        "origin": "神笔马良。",
+        "background": "他画出的马，从纸上跳了出来。他是造物主，在这个像素世界里，他想画什么就画什么。",
+        "skill": {
+            "name": "绘物",
+            "description": "巨笔横扫，把自己画成下一只公开马。不刷商店。画不了不放。",
+            "type": "sig_huiwu",
+            "params": {}
+        },
+        "greeting": "妙笔生花画宏图，心想事成梦成真。祝您心想事成，画出美好未来！",
+        "recipeOnly": true
+    },
+    {
+        "id": "immortal_bal",
+        "name": "巴利俄斯",
+        "level": 83,
+        "tier": 5,
+        "faction": "D",
+        "rarity": "SSR",
+        "description": "阿喀琉斯的不朽神马。",
+        "origin": "希腊神话。",
+        "background": "阿喀琉斯的不朽神马，西风之神的后代。它见证了特洛伊的陨落，且永生不死。",
+        "skill": {
+            "name": "永生",
+            "description": "受到致命伤后进入休眠，3 回合后满血复活。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 830
+            }
+        },
+        "greeting": "青春永驻容颜好，健康长寿福寿全。祝您长生不老，松鹤延年！"
+    },
+    {
+        "id": "cosmos_burn",
+        "name": "星矢天马",
+        "level": 84,
+        "tier": 5,
+        "faction": "B",
+        "rarity": "SSR",
+        "description": "燃烧小宇宙的天马座圣衣。",
+        "origin": "圣斗士星矢。",
+        "background": "燃烧吧，我的小宇宙！穿上天马座圣衣的少年，为了雅典娜，可以无数次站起来。",
+        "skill": {
+            "name": "天马流星拳",
+            "description": "燃烧小宇宙，流星拳打掉最多 8 个低阶棋子，并对首领造成连击伤害。",
+            "type": "sig_meteor",
+            "params": {}
+        },
+        "greeting": "燃烧青春热血涌，永不言败志气高。祝您青春永驻，热血沸腾！"
+    },
+    {
+        "id": "first_place",
+        "name": "一马当先",
+        "level": 85,
+        "tier": 5,
+        "faction": "C",
+        "rarity": "SSR",
+        "description": "永远跑第一的头带马。",
+        "origin": "成语。",
+        "background": "永远冲在第一个。头带上写着“No.1”。如果不是第一，它就会抑郁。",
+        "skill": {
+            "name": "先制",
+            "description": "战斗开始时必定先手攻击。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "damage": 4250,
+                "amount": 850
+            }
+        },
+        "greeting": "敢为人先创佳绩，领跑时代立潮头。祝您勇争第一，遥遥领先！"
+    },
+    {
+        "id": "god_of_war",
+        "name": "关羽赤兔",
+        "level": 86,
+        "tier": 5,
+        "faction": "A",
+        "rarity": "SSR",
+        "description": "偃月刀下的红色战神。",
+        "origin": "三国演义。",
+        "background": "武圣关云长与赤兔马的完美结合。偃月刀下，无人能走过一回合。忠义的化身。",
+        "skill": {
+            "name": "拖刀计",
+            "description": "蓄力一回合，造成 9999 点暴击伤害。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 4300
+            }
+        },
+        "greeting": "人中龙凤显神威，马到成功万事兴。祝您义薄云天，财运亨通！"
+    },
+    {
+        "id": "luxury_logo",
+        "name": "法拉利",
+        "level": 87,
+        "tier": 5,
+        "faction": "D",
+        "rarity": "SSR",
+        "description": "跃马Logo具象化。",
+        "origin": "知名跑车Logo。",
+        "background": "它是速度与财富的图腾。金黄色的盾牌，黑色的跃马。",
+        "skill": {
+            "name": "钞能力",
+            "description": "消耗金币，直接秒杀敌人。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "amount": 870
+            }
+        },
+        "greeting": "极速狂飙奔前程，人生赢家享荣华。祝您飞黄腾达，人生赢家！"
+    },
+    {
+        "id": "raoh_king",
+        "name": "拉奥黑王",
+        "level": 88,
+        "tier": 5,
+        "faction": "B",
+        "rarity": "SSR",
+        "description": "世纪末霸主的巨型坐骑。 (北斗神拳)",
+        "origin": "北斗神拳。",
+        "background": "世纪末霸主拉奥的坐骑。体型如象，能够踩碎坦克。它是力量与霸权的极致。",
+        "skill": {
+            "name": "黑王踏",
+            "description": "对全屏地面单位造成震荡伤害。 【效果：清除周围 3×3 区域】",
+            "type": "arch_bomb",
+            "params": {
+                "damage": 4400,
+                "radius": 1
+            }
+        },
+        "greeting": "世纪末霸主显威，唯我独尊定乾坤。祝您霸气侧漏，掌控全局！"
+    },
+    {
+        "id": "lantern_life",
+        "name": "走马灯",
+        "level": 89,
+        "tier": 5,
+        "faction": "C",
+        "rarity": "SSR",
+        "description": "旋转的跑马灯，回顾一生。",
+        "origin": "传统工艺品/濒死体验。",
+        "background": "旋转的灯笼，上面画着万马奔腾。看着它，仿佛回顾了自己的一生。",
+        "skill": {
+            "name": "回溯",
+            "description": "将游戏倒退回 3 回合前的状态。 【效果：重排棋盘】",
+            "type": "arch_shuffle",
+            "params": {
+                "damage": 4450
+            }
+        },
+        "greeting": "岁月流转情依旧，不负韶华争朝夕。祝您珍惜当下，不负流年！"
+    },
+    {
+        "id": "sun_chariot",
+        "name": "赫利俄斯",
+        "level": 90,
+        "tier": 5,
+        "faction": "D",
+        "rarity": "SSR",
+        "description": "拉着太阳的火焰战车。",
+        "origin": "希腊神话。",
+        "background": "太阳神车。每天清晨，它拉着太阳升起，驱散世间的一切黑暗。",
+        "skill": {
+            "name": "烈阳",
+            "description": "照亮全图，并对亡灵系敌人造成持续伤害。 【效果：对首领造成伤害】",
+            "type": "arch_snipe",
+            "params": {
+                "damage": 4500
+            }
+        },
+        "greeting": "阳光普照暖人间，光芒万丈耀中华。祝您阳光开朗，光彩夺目！"
+    },
+    {
+        "id": "qilin_myth",
+        "name": "麒麟",
+        "level": 91,
+        "tier": 5,
+        "faction": "A",
+        "rarity": "SSR",
+        "description": "龙头马身的祥瑞之兆。",
+        "origin": "中国神话。",
+        "background": "仁兽。龙头、鹿角、狮眼、虎背、熊腰、蛇鳞、马蹄、牛尾。它的出现预示着圣人降临。",
+        "skill": {
+            "name": "祥瑞",
+            "description": "提升全队幸运值，掉落奖励翻倍。 【效果：获得金币】",
+            "type": "arch_economy",
+            "params": {
+                "amount": 910
+            },
+            "trigger": "manual",
+            "tags": [
+                "wealth",
+                "myth"
+            ],
+            "priority": "resource"
+        },
+        "greeting": "麒麟送子福临门，福寿安康万事顺。祝您瑞气盈门，大吉大利！"
+    },
+    {
+        "id": "derby_girl",
+        "name": "赛马娘",
+        "level": 92,
+        "tier": 5,
+        "faction": "B",
+        "rarity": "Hidden",
+        "description": "**[隐藏]** 奔跑的马耳少女。 (特别周致敬)",
+        "origin": "赛马娘 (致敬特别周)。",
+        "background": "拥有马耳和尾巴的奔跑少女。为了梦想，为了在闪光系列赛中夺冠，她全力奔跑。",
+        "skill": {
+            "name": "末脚",
+            "description": "闸门倒计时后沿滑动方向冲线，低级被撞飞，终点同级撕线合成。冲不动不放。",
+            "type": "sig_derby",
+            "params": {},
+            "trigger": "manual",
+            "tags": [
+                "strike",
+                "myth"
+            ],
+            "priority": "board"
+        },
+        "greeting": "青春活力无限好，追逐梦想永不老。祝您永远年轻，永远热泪盈眶！",
+        "recipeOnly": true
+    },
+    {
+        "id": "tech_giants",
+        "name": "三驾马车",
+        "level": 93,
+        "tier": 5,
+        "faction": "C",
+        "rarity": "Hidden",
+        "description": "**[隐藏]** 三位马姓大佬驾驶的科幻战车。",
+        "origin": "互联网三巨头梗。",
+        "background": "三位姓马的大佬驾驶着一辆充满科幻感的战车。他们掌控着电商、社交与金融的命脉。",
+        "skill": {
+            "name": "生态闭环",
+            "description": "三只手抓走低级污染，再砸下一个「垄断」箱，掉出最多 2 只当前段公开马。不是金币。无低级可吃不放。",
+            "type": "sig_ecosystem",
+            "params": {},
+            "trigger": "manual",
+            "tags": [
+                "wealth",
+                "machine"
+            ],
+            "priority": "board"
+        },
+        "greeting": "财运亨通富贵来，富可敌国基业长。祝您三阳开泰，富贵逼人！",
+        "recipeOnly": true
+    },
+    {
+        "id": "merry_go",
+        "name": "旋转木马",
+        "level": 94,
+        "tier": 5,
+        "faction": "D",
+        "rarity": "SSR",
+        "description": "治愈童心的华丽设施。",
+        "origin": "游乐园。",
+        "background": "它是童年的梦，是永恒的快乐。不管外面的世界多残酷，这里永远有音乐和欢笑。",
+        "skill": {
+            "name": "乐园",
+            "description": "使所有敌人停止攻击，跟着音乐转圈。 【效果：生成 2 个低级单位】",
+            "type": "arch_summon",
+            "params": {
+                "damage": 4700,
+                "count": 2
+            },
+            "trigger": "manual",
+            "tags": [
+                "chaos",
+                "purify"
+            ],
+            "priority": "board"
+        },
+        "greeting": "快乐常在笑颜开，童心未泯岁月长。祝您天天开心，笑口常开！"
+    },
+    {
+        "id": "samurai_mech",
+        "name": "刃马一体",
+        "level": 95,
+        "tier": 5,
+        "faction": "B",
+        "rarity": "SSR",
+        "description": "斩舰刀与大曾伽。 (机战OG)",
+        "origin": "机战OG。",
+        "background": "大曾伽骑乘着变形为战马的龙卷。“吾之斩舰刀，无物不断！”",
+        "skill": {
+            "name": "斩舰刀",
+            "description": "沿滑动方向切开整行/整列，并对首领造成 99999 点真实伤害。",
+            "type": "sig_zankanto",
+            "params": {
+                "damage": 4750
+            },
+            "trigger": "manual",
+            "tags": [
+                "strike",
+                "machine"
+            ],
+            "priority": "boss"
+        },
+        "greeting": "斩断厄运开新局，一往无前破万难。祝您披荆斩棘，所向披靡！"
+    },
+    {
+        "id": "sleipnir_god",
+        "name": "奥丁神驹",
+        "level": 96,
+        "tier": 5,
+        "faction": "D",
+        "rarity": "SSR",
+        "description": "奥丁的八足神驹。 (北欧神话)",
+        "origin": "北欧神话。",
+        "background": "斯雷普尼尔，拥有八条腿的神马。它能跨越彩虹桥，穿梭于九界之间。",
+        "skill": {
+            "name": "神行",
+            "description": "可以在任意格子之间瞬移。 【效果：净化负面状态】",
+            "type": "arch_heal",
+            "params": {
+                "damage": 4800
+            },
+            "trigger": "manual",
+            "tags": [
+                "myth",
+                "chaos"
+            ],
+            "priority": "board"
+        },
+        "greeting": "八面玲珑交际广，面面俱到事事圆。祝您八面威风，面面俱到！"
+    },
+    {
+        "id": "sky_concept",
+        "name": "天马行空",
+        "level": 97,
+        "tier": 5,
+        "faction": "A",
+        "rarity": "SSR",
+        "description": "在云端自由奔跑的神驹。",
+        "origin": "成语。",
+        "background": "它不再受重力的束缚。它是一匹由云朵和想象力构成的马。",
+        "skill": {
+            "name": "自由",
+            "description": "无视所有规则束缚（可以穿人、穿墙）。 【效果：献祭自身，升级邻格】",
+            "type": "arch_upgrade",
+            "params": {
+                "damage": 4850,
+                "radius": 1
+            },
+            "trigger": "manual",
+            "tags": [
+                "myth",
+                "chaos"
+            ],
+            "priority": "board"
+        },
+        "greeting": "天马行空创意新，无拘无束乐逍遥。祝您思维开阔，自由自在！"
+    },
+    {
+        "id": "bifrost_br",
+        "name": "彩虹桥",
+        "level": 98,
+        "tier": 5,
+        "faction": "D",
+        "rarity": "SSR",
+        "description": "连接天地的光之马道。",
+        "origin": "北欧神话。",
+        "background": "连接人界与神界的桥梁。当马蹄踏上彩虹，凡人亦可成神。",
+        "skill": {
+            "name": "飞升",
+            "description": "将一个低级单位直接升级为高级单位。 【效果：献祭自身，升级邻格】",
+            "type": "arch_upgrade",
+            "params": {},
+            "trigger": "manual",
+            "tags": [
+                "myth",
+                "harmony"
+            ],
+            "priority": "growth"
+        },
+        "greeting": "桥接未来通坦途，通往幸福康庄道。祝您前程似锦，通向未来！"
+    },
+    {
+        "id": "spirit_drag",
+        "name": "龙马精神",
+        "level": 99,
+        "tier": 5,
+        "faction": "C",
+        "rarity": "SSR",
+        "description": "精神力量的终极具象。",
+        "origin": "成语。",
+        "background": "一种精神力量的终极具象化。它没有实体，只有燃烧的斗志。",
+        "skill": {
+            "name": "振奋",
+            "description": "全队攻击力翻倍，持续 3 回合。 【效果：随机变化同阶角色】",
+            "type": "arch_transform",
+            "params": {
+                "damage": 4950
+            },
+            "trigger": "manual",
+            "tags": [
+                "myth",
+                "strike"
+            ],
+            "priority": "boss"
+        },
+        "greeting": "精神矍铄身体健，活力满满气色红。祝您龙马精神，神采飞扬！"
+    },
+    {
+        "id": "elon_mars",
+        "name": "马一龙",
+        "level": 100,
+        "tier": 5,
+        "faction": "B",
+        "rarity": "SSR",
+        "description": "骑着火箭想上火星的科技狂人。 (Elon Musk)",
+        "origin": "伊隆·马斯克 (Elon Musk) 谐音梗。",
+        "background": "硅谷钢铁侠，科技界的狂人。他不再骑马，他骑的是通往火星的银色飞船。他坚信人类的征途是星辰大海，或者是去火星养电子马。",
+        "skill": {
+            "name": "To The Moon",
+            "description": "召唤火箭轰炸全屏，并将所有持有的金币翻倍（模拟币价暴涨）。",
+            "type": "sig_tothemoon",
+            "params": {},
+            "trigger": "manual",
+            "tags": [
+                "wealth",
+                "machine"
+            ],
+            "priority": "boss"
+        },
+        "greeting": "创新突破无止境，财富暴涨冲云霄。祝您眼光独到，一飞冲天！"
+    },
+    {
+        "id": "cosmic_one",
+        "name": "宇宙神驹",
+        "level": 101,
+        "tier": 5,
+        "faction": "D",
+        "rarity": "Hidden",
+        "description": "**[隐藏]** 终章门前那匹先让你停一下、想一想的宇宙大马。",
+        "origin": "终章分流节点。",
+        "background": "它像是所有高阶角色临时凑出来的宇宙代表，既神圣又有点夸张，像一张把银河披在身上的年会主视觉。见到它，说明这一局已经有资格封卷，也说明你还能继续往更离谱的地方冲。",
+        "skill": {
+            "name": "天门",
+            "description": "棋盘掉进星空。Lv.1–3 化成星点内爆；若已有 101，天门裂开落下分流卡。无污染且未到 101 不放。",
+            "type": "sig_cosmic",
+            "params": {},
+            "trigger": "manual",
+            "tags": [
+                "myth",
+                "harmony"
+            ],
+            "priority": "board"
+        },
+        "greeting": "星河都给你让道了，不如先收下这份体面，再决定要不要继续整点大的。"
+    },
+    {
+        "id": "great_harmony_cyber_sci_fi",
+        "assetId": "great_harmony_cyber_sci_fi",
+        "name": "双马同谐·星港超频",
+        "level": 102,
+        "tier": 5,
+        "faction": "D",
+        "rarity": "Hidden",
+        "description": "**[真结局·赛博科幻]** 终局不再是单一神驹，而是一整支赛博马系谱在星港年会里集体亮相。",
+        "origin": "双马同谐的赛博科幻路线。",
+        "background": "木马号领衔，老板马、机械马、财富马和程序员马在全息航道上排成一张豪华终局结算卡。它代表的是这一路把秩序、财富、机械感一路超频到底，最后把宇宙终章开成了未来巡游。",
+        "skill": {
+            "name": "星港超频",
+            "description": "终章完成时，以赛博科幻路线为这一局盖章封卷，让机械、财富与高阶秩序一同冲上星港主视觉。",
+            "type": "sig_harmony",
+            "params": {},
+            "trigger": "on_endgame",
+            "tags": [
+                "harmony",
+                "machine",
+                "wealth"
+            ],
+            "priority": "ending"
+        },
+        "greeting": "愿你今年一路超频、一路提速，项目顺、财气顺、灵感也顺，连好运都像火箭发射一样直接升空。",
+        "hiddenEnding": true,
+        "endingTier": true,
+        "unlockBy": "true_ending_cyber"
+    },
+    {
+        "id": "great_harmony_ancient_classic",
+        "assetId": "great_harmony_ancient_classic",
+        "name": "双马同谐·千骑长卷",
+        "level": 102,
+        "tier": 5,
+        "faction": "D",
+        "rarity": "Hidden",
+        "description": "**[真结局·古风经典]** 这一版终章像一幅被慢慢展开的群英长卷，主角不是一匹马，而是一整列名骑名将的收官仪仗。",
+        "origin": "双马同谐的古风经典路线。",
+        "background": "忠义、章法、稳扎稳打的气口，在终章被收束成堂堂正正的大团圆长卷。它不是离谱地爆炸，而是层层铺陈、越看越稳，最后让整局像一卷压轴年画那样封存下来。",
+        "skill": {
+            "name": "千骑封卷",
+            "description": "终章完成时，以古风经典路线定稿，把忠义、章法与群英气韵一并写进这一局的命书。",
+            "type": "sig_harmony",
+            "params": {},
+            "trigger": "on_endgame",
+            "tags": [
+                "harmony",
+                "strike",
+                "control"
+            ],
+            "priority": "ending"
+        },
+        "greeting": "愿你今年行事有章法，进退有余地，抬手见风骨，落笔有回响，日子过成一卷越翻越好的长卷。",
+        "hiddenEnding": true,
+        "endingTier": true,
+        "unlockBy": "true_ending_ancient"
+    },
+    {
+        "id": "great_harmony_anime_mania",
+        "assetId": "great_harmony_anime_mania",
+        "name": "双马同谐·热血万象",
+        "level": 102,
+        "tier": 5,
+        "faction": "D",
+        "rarity": "Hidden",
+        "description": "**[真结局·动漫 Mania]** 这一版终章彻底进入跨棚联动状态，最后收束成一张像片尾谢幕一样的全明星大合照。",
+        "origin": "双马同谐的动漫 Mania 路线。",
+        "background": "热血、名场面、梗感和角色辨识度一路累积，到了终局不再讲究肃穆，而是直接把所有代表角色拉上舞台谢幕。它看起来像收藏卡，也像一张会让人想起片尾曲的豪华纪念图。",
+        "skill": {
+            "name": "热血万象",
+            "description": "终章完成时，以动漫 Mania 路线封印本局，让热血、梗感与跨作品谢幕气氛一起定格。",
+            "type": "sig_harmony",
+            "params": {},
+            "trigger": "on_endgame",
+            "tags": [
+                "harmony",
+                "chaos",
+                "machine"
+            ],
+            "priority": "ending"
+        },
+        "greeting": "愿你今年像主角团一样热血到底，关键时刻总能逆风翻盘，名场面不断，结局还特别漂亮。",
+        "hiddenEnding": true,
+        "endingTier": true,
+        "unlockBy": "true_ending_anime"
+    },
+    {
+        "id": "great_harmony_myth_legend",
+        "assetId": "great_harmony_myth_legend",
+        "name": "双马同谐·诸天祥临",
+        "level": 102,
+        "tier": 5,
+        "faction": "D",
+        "rarity": "Hidden",
+        "description": "**[真结局·神话传说]** 这一版终章由祥瑞、天马、神兽与诸神气韵共同抬起，最终像一场天门大典般落幕。",
+        "origin": "双马同谐的神话传说路线。",
+        "background": "当高阶秩序被稳定到极致，终章不再只是通关，而像一次诸天会盟。麒麟居中，天马、独角兽、彩虹桥与龙马精神层层拱卫，把这一局抬成了最像“真结局”的那张天界封绘。",
+        "skill": {
+            "name": "诸天祥临",
+            "description": "终章完成时，以神话传说路线盖章，把祥瑞、神性与祝福感一并收进这一局的最终结算。",
+            "type": "sig_harmony",
+            "params": {},
+            "trigger": "on_endgame",
+            "tags": [
+                "harmony",
+                "myth",
+                "purify"
+            ],
+            "priority": "ending"
+        },
+        "greeting": "愿你今年有祥光护体，有天马开路，有贵人同行，所有重要的事都落在最好的时机上。",
+        "hiddenEnding": true,
+        "endingTier": true,
+        "unlockBy": "true_ending_myth"
+    }
+]

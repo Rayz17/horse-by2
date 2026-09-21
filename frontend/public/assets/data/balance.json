@@ -1,0 +1,108 @@
+{
+  "criticalRate": 0.05,
+  "criticalPityThreshold": 40,
+  "bossSpawnTurnsNormal": 30,
+  "bossSpawnTurnsEndgame": 20,
+  "harmony": {
+    "level101Min": 2,
+    "highTierRatioMin": 0.35,
+    "stableMovesMin": 3,
+    "endgameEventsMin": 1
+  },
+  "initialGold": 1000,
+  "initialLegacyGold": 1000,
+  "legacyGoldCap": 2000,
+  "runGoldToScoreRatio": 10,
+  "legacyGoldRewards": {
+    "deadlockEnding": 100,
+    "normalEnding": 300,
+    "trueEnding": 800
+  },
+  "spawn": {
+    "lowSegmentRatio": 0.5,
+    "midSegmentRatio": 0.35,
+    "highSegmentRatio": 0.15,
+    "cannonReliefChance": 0.25,
+    "cannonReliefCooldown": 10,
+    "emptyBoardThreshold": 4,
+    "deadlockEmptySpots": 3,
+    "floorRiseRatio": 0.5,
+    "weaknessSpawnChance": 0.15,
+    "recipeSpawnChance": 0.1
+  },
+  "feel": {
+    "inputBufferEnabled": true,
+    "squashStretchEnabled": true,
+    "floatingScoreEnabled": true,
+    "comboEnabled": true,
+    "comboMultiplierStep": 0.25,
+    "comboMultiplierCap": 3,
+    "milestoneSlowMoEnabled": true,
+    "milestoneSlowMoScale": 0.3,
+    "milestoneSlowMoMs": 400,
+    "milestoneZoom": 1.06,
+    "vibrateEnabled": true
+  },
+  "tension": {
+    "pressureBarThreshold": 0.7,
+    "pressureBarCritical": 0.85,
+    "criticalWarningMaxPerRun": 2,
+    "deadlockHighlightMs": 1500
+  },
+  "undo": {
+    "freePerRun": 1,
+    "allowGoldPurchase": false
+  },
+  "boss": {
+    "obstacleCap": 8,
+    "enrageTurns": 25,
+    "enragedSkillInterval": 2,
+    "normalSkillInterval": 3,
+    "telegraphEnabled": true,
+    "defeatChoiceGoldMultiplier": 150,
+    "goldIngotBase": 500,
+    "goldIngotPerBossIndex": 100
+  },
+  "economy": {
+    "shopTierPriceMultiplier": 0.3
+  },
+  "chapters": {
+    "objectiveRewardBase": 100,
+    "objectiveRewardStep": 75
+  },
+  "recipeDiscoveryReward": 200,
+  "routes": {
+    "cyberSciFi": "#9966ff",
+    "ancientClassic": "#ffd700",
+    "animeMania": "#ff66aa",
+    "mythLegend": "#66ccff"
+  },
+  "runGoldCap": 5000,
+  "modes": {
+    "sprintMoves": 30,
+    "bossRushInterval": 12,
+    "bossRushTarget": 3,
+    "recipeHuntTarget": 3,
+    "recipeHuntSpawnChance": 0.45,
+    "routeLockBonus": 12
+  },
+  "fortune": {
+    "cardWidth": 720,
+    "cardHeight": 1280
+  },
+  "pairBonus": {
+    "multiplier": 1.25,
+    "turns": 8
+  },
+  "events": {
+    "recipeHelpSpawns": 5,
+    "mythBossAdvance": 8,
+    "starExtraLowTurns": 6
+  },
+  "audio": {
+    "defaultVolume": 0.7
+  },
+  "shopDaily": {
+    "slotCount": 4
+  }
+}

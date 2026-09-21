@@ -1,0 +1,58 @@
+[
+  {
+    "id": "item_cannon",
+    "name": "大炮",
+    "icon": "💣",
+    "price": 200,
+    "description": "拖拽使用：与任意马匹合成【马后炮】，或直接炸毁目标单位。"
+  },
+  {
+    "id": "item_tiger",
+    "name": "老虎玩偶",
+    "icon": "🐯",
+    "price": 500,
+    "description": "拖拽使用：对首领造成其最大生命三分之一伤害；若无首领则消除一个普通单位。"
+  },
+  {
+    "id": "item_deer_sign",
+    "name": "鹿牌",
+    "icon": "🦌",
+    "price": 50,
+    "description": "拖拽使用：将目标单位变为棋盘上最常见等级的单位，便于凑对合成。"
+  },
+  {
+    "id": "item_brush",
+    "name": "神笔",
+    "icon": "🖌️",
+    "price": 800,
+    "description": "拖拽使用：使目标单位直接升 1 级。"
+  },
+  {
+    "id": "item_plum",
+    "name": "青梅",
+    "icon": "🍈",
+    "price": 100,
+    "description": "点击使用：净化全场负面状态（解冻、灭火、清障）。"
+  },
+  {
+    "id": "item_gold_ingot",
+    "name": "金元宝",
+    "icon": "💰",
+    "price": 0,
+    "description": "击败首领后掉落。点击使用获得大量金币（500 + 100×首领序号）。"
+  },
+  {
+    "id": "item_monkey",
+    "name": "猴子",
+    "icon": "🐵",
+    "price": 0,
+    "description": "火猴首领专属掉落。作为催化剂与马匹合成，或使目标马直接升 2 级（上限 Lv.90）。"
+  },
+  {
+    "id": "item_whisk",
+    "name": "马尾拂尘",
+    "icon": "🧹",
+    "price": 300,
+    "description": "点击使用：重新排列棋盘，将相同等级的马聚在一起。"
+  }
+]
