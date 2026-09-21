@@ -93,16 +93,17 @@ try {
   check('进入对局', true);
 
   const dismissOverlays = async () => {
-    // 合成可能连发多张解锁卡，清空整个队列
-    for (let i = 0; i < 10; i++) {
-      const showing = await page.evaluate(() => {
+    // 合成可能连发多张解锁卡，清空整个队列（fade 期间 unlockCloser 为 null，需多轮探测）
+    for (let i = 0; i < 15; i++) {
+      const state = await page.evaluate(() => {
         const s = window.__game.scene.getScene('Game');
-        if (s.isShowingUnlock && s.unlockCloser) { s.unlockCloser(); return true; }
-        return s.isShowingUnlock;
+        if (s.isShowingUnlock && s.unlockCloser) { s.unlockCloser(); return 'closed'; }
+        return s.isShowingUnlock ? 'fading' : 'clear';
       });
-      if (!showing) break;
-      await page.waitForTimeout(450);
+      if (state === 'clear') return true;
+      await page.waitForTimeout(400);
     }
+    return !(await page.evaluate(() => window.__game.scene.getScene('Game').isShowingUnlock));
   };
 
   const sig = () => page.evaluate(() => {
@@ -116,7 +117,23 @@ try {
     s.undoRemaining = 1;
     s.undoBtn?.setText('悔棋 1');
   });
+  const getUndoRemaining = () => page.evaluate(() => window.__game.scene.getScene('Game').undoRemaining);
   const pressKey = (key) => page.keyboard.press(key);
+
+  /**
+   * 悔棋一次并确认真正触发：Z 键在解锁卡等弹窗打开时会被输入锁吞掉，
+   * 因此读取 undoRemaining 确认消耗，未触发则清理弹窗后重试。
+   */
+  const undoWithVerify = async () => {
+    for (let i = 0; i < 3; i++) {
+      await dismissOverlays();
+      const before = await getUndoRemaining();
+      await pressKey('KeyZ');
+      await page.waitForTimeout(500);
+      if ((await getUndoRemaining()) < before) return true;
+    }
+    return false;
+  };
 
   // —— 普通悔棋：等结算完成后再 Z ——
   const DIRECTIONS = ['ArrowRight', 'ArrowUp', 'ArrowLeft', 'ArrowDown'];
@@ -125,7 +142,7 @@ try {
     await dismissOverlays();
     const before = await sig();
     await pressKey(dir);
-    await page.waitForTimeout(600);
+    await page.waitForTimeout(700);
     if ((await sig()) !== before) { validDir = dir; break; }
   }
   check('棋盘可动', !!validDir, validDir ? `有效方向 ${validDir}` : '四个方向都没有改变盘面');
@@ -136,12 +153,13 @@ try {
     await resetUndo();
     const before = await sig();
     await pressKey(validDir);
-    await page.waitForTimeout(600);
-    await dismissOverlays(); // 合并可能弹解锁卡，挡住 Z 键
-    await pressKey('KeyZ');
-    await page.waitForTimeout(900);
-    plainUndoOk = (await sig()) === before;
-    check('悔棋回滚（结算完成后）', plainUndoOk);
+    await page.waitForTimeout(800);
+    const fired = await undoWithVerify();
+    await page.waitForTimeout(700);
+    const after = await sig();
+    plainUndoOk = fired && after === before;
+    check('悔棋回滚（结算完成后）', plainUndoOk,
+      plainUndoOk ? '' : `undoFired=${fired} restored=${after === before} tiles ${JSON.parse(before).length}→${JSON.parse(after).length}`);
   }
 
   // —— 悔棋竞态：滑动后 60ms 内立刻 Z（250ms 结算窗口内）——
@@ -156,17 +174,31 @@ try {
     await page.waitForTimeout(1200);
     await dismissOverlays();
     await page.waitForTimeout(400);
-    raceUndoOk = (await sig()) === before;
-    check('悔棋竞态（滑动后立即 Z）', raceUndoOk, raceUndoOk ? '盘面未被滞后结算覆盖' : '盘面与滑动前不一致');
+    const raceFired = (await getUndoRemaining()) === 0; // Z 确实触发（未被弹窗吞掉）
+    const after = await sig();
+    raceUndoOk = raceFired && after === before;
+    check('悔棋竞态（滑动后立即 Z）', raceUndoOk,
+      raceUndoOk ? '盘面未被滞后结算覆盖' : `undoFired=${raceFired} tiles ${JSON.parse(before).length}→${JSON.parse(after).length}`);
   }
 
-  // —— 等延迟加载的角色贴图全部就位（复现图鉴崩溃的前提）——
-  await page.waitForFunction(() => {
+  // —— 等延迟加载的角色贴图全部就位（复现图鉴崩溃的前提；未就位则显式失败）——
+  let deferredReady = true;
+  try {
+    await page.waitForFunction(() => {
+      const g = window.__game;
+      const chars = g.cache.json.get('characters') || [];
+      return chars.filter(c => c.level > 35 && !c.hiddenEnding)
+        .every(c => g.textures.exists(c.id));
+    }, null, { timeout: 120000 });
+  } catch {
+    deferredReady = false;
+  }
+  const deferredState = await page.evaluate(() => {
     const g = window.__game;
-    const chars = g.cache.json.get('characters') || [];
-    return chars.filter(c => c.level > 35 && !c.hiddenEnding)
-      .every(c => g.textures.exists(c.id));
-  }, null, { timeout: 60000 }).catch(() => {});
+    const chars = (g.cache.json.get('characters') || []).filter(c => c.level > 35 && !c.hiddenEnding);
+    return `${chars.filter(c => g.textures.exists(c.id)).length}/${chars.length}`;
+  });
+  check('延迟立绘全部就位（图鉴崩溃前提）', deferredReady, deferredState);
   await page.waitForTimeout(1000);
 
   // —— 回主菜单再开图鉴（历史崩溃点）——
