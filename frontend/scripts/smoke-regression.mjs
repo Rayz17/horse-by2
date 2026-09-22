@@ -138,8 +138,14 @@ try {
   // —— 找有效方向，并把盘面养到 ≥6 子 ——
   // 空盘 pity（occupied < emptyBoardThreshold=4）会在后续结算里自动补子，
   // 低于阈值的盘面上做悔棋断言会撞上游戏自己的安全网，属于无效测试。
+  // 合并会吃掉棋子，滑动自然增长在 CI 上偶发不达标，因此直接用调试
+  // 生成接口把盘面补到健康规模，保证前置条件确定性成立。
   const DIRECTIONS = ['ArrowRight', 'ArrowUp', 'ArrowLeft', 'ArrowDown'];
   const tileCount = () => page.evaluate(() => window.__game.scene.getScene('Game').grid.getAllTiles().length);
+  await page.evaluate(() => {
+    const grid = window.__game.scene.getScene('Game').grid;
+    for (let i = 0; i < 8 && grid.getAllTiles().length < 6; i++) grid.forceSpawnCharacter(1);
+  });
   let validDir = null;
   for (let i = 0; i < 10; i++) {
     await dismissOverlays();
