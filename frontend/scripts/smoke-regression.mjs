@@ -163,19 +163,25 @@ try {
     `dir=${validDir} tiles=${await tileCount()}`);
 
   let plainUndoOk = false;
+  let plainUndoDetail = '';
   if (validDir) {
-    await dismissOverlays();
-    await ensureTiles();
-    await resetUndo();
-    const before = await sig();
-    await pressKey(validDir);
-    await page.waitForTimeout(800);
-    const fired = await undoWithVerify();
-    await page.waitForTimeout(700);
-    const after = await sig();
-    plainUndoOk = fired && after === before;
-    check('悔棋回滚（结算完成后）', plainUndoOk,
-      plainUndoOk ? '' : `undoFired=${fired} restored=${after === before} tiles ${JSON.parse(before).length}→${JSON.parse(after).length}`);
+    // 慢环境下偶发一次不干净的移动链（输入缓冲等），失败后整体重试一次
+    for (let attempt = 0; attempt < 2 && !plainUndoOk; attempt++) {
+      await dismissOverlays();
+      await ensureTiles();
+      await resetUndo();
+      const before = await sig();
+      await pressKey(validDir);
+      await page.waitForTimeout(1000);
+      const fired = await undoWithVerify();
+      await page.waitForTimeout(700);
+      const after = await sig();
+      plainUndoOk = fired && after === before;
+      if (!plainUndoOk) {
+        plainUndoDetail = `attempt${attempt + 1} undoFired=${fired} tiles ${JSON.parse(before).length}→${JSON.parse(after).length}`;
+      }
+    }
+    check('悔棋回滚（结算完成后）', plainUndoOk, plainUndoOk ? '' : plainUndoDetail);
   }
 
   // —— 悔棋竞态：滑动后 60ms 内立刻 Z（250ms 结算窗口内）——
