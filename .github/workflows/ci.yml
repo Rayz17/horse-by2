@@ -28,3 +28,5 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Smoke regression (play + undo + gallery)
         run: node scripts/smoke-regression.mjs
+      - name: Spawn window probe (pacing guard)
+        run: node scripts/spawn-window-probe.mjs

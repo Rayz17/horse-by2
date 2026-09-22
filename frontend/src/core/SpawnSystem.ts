@@ -82,8 +82,13 @@ export class SpawnSystem {
             this.cannonReliefCounter++;
         }
 
+        // Boss 弱点补位：只在弱点角色等级落在当前生成窗口内（≤ maxLevel-2）时才补，
+        // 否则会在低级盘面原级砸下远超进度的角色（节奏保护），先把进度养上来再解锁反制位。
         if (weaknessChar && this.rng() < balance.weaknessSpawnChance) {
-            return { kind: 'character', char: weaknessChar, level: weaknessChar.level, reason: 'weakness' };
+            const windowCeiling = Math.max(minActiveLevel, maxLevel - 2);
+            if (weaknessChar.level <= windowCeiling) {
+                return { kind: 'character', char: weaknessChar, level: weaknessChar.level, reason: 'weakness' };
+            }
         }
 
         const recipeChance = recipeChanceOverride ?? balance.recipeSpawnChance;
