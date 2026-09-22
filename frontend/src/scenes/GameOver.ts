@@ -204,15 +204,16 @@ export class GameOver extends Scene {
         fitWrappedText(name, displayChar.name, innerWidth, 28, 26, 18);
 
         const statsH = 52;
-        const imageSize = Math.min(176, Math.round(cardHeight - headerH - statsH - 36));
+        // 立绘白底大图：占满预算（上限 260），去底立绘在白底上最清晰
+        const imageSize = Math.min(260, Math.round(cardHeight - headerH - statsH - 36));
         const imageY = -cardHeight / 2 + headerH + 16 + imageSize / 2;
-        const imageWindowBg = this.add.rectangle(0, imageY, imageSize, imageSize, 0x0d0d12, 1);
+        const imageWindowBg = this.add.rectangle(0, imageY, imageSize, imageSize, 0xffffff, 1);
         imageWindowBg.setStrokeStyle(3, 0xd4af37, 0.85);
         card.add(imageWindowBg);
-        const fallback = this.add.text(0, imageY, '?', { fontSize: '64px', color: '#ffd700' }).setOrigin(0.5);
+        const fallback = this.add.text(0, imageY, '?', { fontSize: '64px', color: '#999999' }).setOrigin(0.5);
         card.add(fallback);
         if (portraitKey) {
-            attachPortrait(this, card, portraitKey, 0, imageY, imageSize - 16, imageSize - 16, {
+            attachPortrait(this, card, portraitKey, 0, imageY, imageSize - 10, imageSize - 10, {
                 fallback,
                 char: displayChar,
                 useOpaqueBounds: true
@@ -288,7 +289,7 @@ export class GameOver extends Scene {
         layer.add(route);
 
         const artY = 340;
-        layer.add(this.add.rectangle(360, artY, 260, 260, 0x0d0d12).setStrokeStyle(3, 0xd4af37));
+        layer.add(this.add.rectangle(360, artY, 260, 260, 0xffffff).setStrokeStyle(3, 0xd4af37));
         if (this.textures.exists(char.id)) {
             attachPortrait(this, layer, char.id, 360, artY, 220, 220, { char, useOpaqueBounds: true });
         } else {

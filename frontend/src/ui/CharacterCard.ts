@@ -56,15 +56,16 @@ export function buildCharacterCard(
     fitWrappedText(name, char.name, innerW - 16, 28, 26, 16);
 
     const minText = 150;
-    const portraitBudget = innerBottom - (innerTop + headerH) - minText - 20;
-    const imageSize = Math.max(128, Math.min(188, Math.round(portraitBudget)));
-    const imageY = innerTop + headerH + 12 + imageSize / 2;
-    const windowBg = scene.add.rectangle(plateCx, imageY, imageSize, imageSize, 0x141018, 1);
+    const portraitBudget = innerBottom - (innerTop + headerH) - minText - 16;
+    // 立绘是卡面主视觉：占满预算（上限 300），白底衬图保证去底立绘清晰可见
+    const imageSize = Math.max(160, Math.min(300, Math.round(portraitBudget)));
+    const imageY = innerTop + headerH + 10 + imageSize / 2;
+    const windowBg = scene.add.rectangle(plateCx, imageY, imageSize, imageSize, 0xffffff, 1);
     windowBg.setStrokeStyle(3, 0xd4af37, 0.85);
     container.add(windowBg);
-    const fallback = scene.add.text(plateCx, imageY, '?', { fontSize: '64px', color: '#ffd700' }).setOrigin(0.5);
+    const fallback = scene.add.text(plateCx, imageY, '?', { fontSize: '64px', color: '#999999' }).setOrigin(0.5);
     container.add(fallback);
-    attachPortrait(scene, container, char.id, plateCx, imageY, imageSize - 16, imageSize - 16, {
+    attachPortrait(scene, container, char.id, plateCx, imageY, imageSize - 10, imageSize - 10, {
         fallback,
         char,
         useOpaqueBounds: true

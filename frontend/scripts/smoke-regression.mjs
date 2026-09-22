@@ -138,17 +138,20 @@ try {
   // —— 找有效方向，并把盘面养到 ≥6 子 ——
   // 空盘 pity（occupied < emptyBoardThreshold=4）会在后续结算里自动补子，
   // 低于阈值的盘面上做悔棋断言会撞上游戏自己的安全网，属于无效测试。
-  // 合并会吃掉棋子，滑动自然增长在 CI 上偶发不达标，因此直接用调试
-  // 生成接口把盘面补到健康规模，保证前置条件确定性成立。
+  // 合并会吃掉棋子，滑动自然增长在 CI 上偶发不达标，因此用调试生成接口
+  // 在每次断言前即时保证规模（ensureTiles），保证前置条件确定性成立。
   const DIRECTIONS = ['ArrowRight', 'ArrowUp', 'ArrowLeft', 'ArrowDown'];
   const tileCount = () => page.evaluate(() => window.__game.scene.getScene('Game').grid.getAllTiles().length);
-  await page.evaluate(() => {
+  const ensureTiles = async () => page.evaluate(() => {
     const grid = window.__game.scene.getScene('Game').grid;
-    for (let i = 0; i < 8 && grid.getAllTiles().length < 6; i++) grid.forceSpawnCharacter(1);
+    let guard = 0;
+    while (grid.getAllTiles().length < 6 && guard++ < 10) grid.forceSpawnCharacter(1);
+    return grid.getAllTiles().length;
   });
   let validDir = null;
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 12; i++) {
     await dismissOverlays();
+    await ensureTiles();
     const dir = DIRECTIONS[i % 4];
     const before = await sig();
     await pressKey(dir);
@@ -162,6 +165,7 @@ try {
   let plainUndoOk = false;
   if (validDir) {
     await dismissOverlays();
+    await ensureTiles();
     await resetUndo();
     const before = await sig();
     await pressKey(validDir);
@@ -178,6 +182,7 @@ try {
   let raceUndoOk = false;
   if (validDir) {
     await dismissOverlays();
+    await ensureTiles();
     await resetUndo();
     const before = await sig();
     await pressKey(validDir);

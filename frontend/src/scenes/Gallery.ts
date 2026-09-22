@@ -438,7 +438,7 @@ export class Gallery extends Phaser.Scene {
 
         const imageSize = 280;
         const imageY = -90;
-        const imageWindowBg = this.add.rectangle(0, imageY, imageSize, imageSize, 0x141018);
+        const imageWindowBg = this.add.rectangle(0, imageY, imageSize, imageSize, 0xffffff);
         imageWindowBg.setStrokeStyle(3, 0xd4af37, 0.85);
         detailsContainer.add(imageWindowBg);
 
