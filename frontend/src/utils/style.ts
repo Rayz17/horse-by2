@@ -53,16 +53,31 @@ export function getRaritySleeveInset(rarity: string): number {
     }
 }
 
-/** Detail/unlock cards need a thicker safe pad than thumbs — R frames eat more than 11%. */
-export function getDetailCardInset(rarity: string): number {
-    return Math.max(0.21, getRaritySleeveInset(rarity) + 0.09);
-}
-
 /** Generated sleeves filled the hole with light grey; punch that fill so portraits show through. */
 export function punchRaritySleeveCenters(scene: Phaser.Scene) {
     if (scene.registry.get('sleevesPunched')) return;
     ['border_n', 'border_r', 'border_sr', 'border_hidden'].forEach(key => punchLightCenter(scene, key));
     scene.registry.set('sleevesPunched', true);
+}
+
+/** Measured normalized inner-hole rects (SSR ships transparent, measured offline). */
+const FALLBACK_HOLE: Record<string, { x: number; y: number; w: number; h: number }> = {
+    border_n: { x: 0.125, y: 0.125, w: 0.75, h: 0.75 },
+    border_r: { x: 0.221, y: 0.221, w: 0.559, h: 0.559 },
+    border_sr: { x: 0.17, y: 0.17, w: 0.66, h: 0.66 },
+    border_ssr: { x: 0.137, y: 0.137, w: 0.707, h: 0.725 },
+    border_hidden: { x: 0.211, y: 0.211, w: 0.578, h: 0.578 }
+};
+
+/**
+ * 卡套的透明内洞（归一化到卡套贴图空间）。底板必须精确盖住这个洞，
+ * 否则详情卡四周会透出背景（「镂空位置不正确」的来源）。
+ */
+export function getRarityHoleRect(scene: Phaser.Scene, rarity: string): { x: number; y: number; w: number; h: number } {
+    const key = getRarityBorderKey(rarity);
+    const measured = scene.registry.get(`${key}_hole`) as { x: number; y: number; w: number; h: number } | undefined;
+    if (measured?.w && measured?.h) return measured;
+    return FALLBACK_HOLE[key] || { x: 0.15, y: 0.15, w: 0.7, h: 0.7 };
 }
 
 function punchLightCenter(scene: Phaser.Scene, key: string) {
@@ -94,6 +109,7 @@ function punchLightCenter(scene: Phaser.Scene, key: string) {
     };
     const seen = new Uint8Array(w * h);
     const stack = [w >> 1, h >> 1];
+    let x0 = w, y0 = h, x1 = -1, y1 = -1;
     while (stack.length) {
         const y = stack.pop()!;
         const x = stack.pop()!;
@@ -103,9 +119,16 @@ function punchLightCenter(scene: Phaser.Scene, key: string) {
         seen[p] = 1;
         if (!isFill(x, y)) continue;
         px[at(x, y) + 3] = 0;
+        if (x < x0) x0 = x;
+        if (y < y0) y0 = y;
+        if (x > x1) x1 = x;
+        if (y > y1) y1 = y;
         stack.push(x + 1, y, x - 1, y, x, y + 1, x, y - 1);
     }
     ctx.putImageData(image, 0, 0);
+    if (x1 >= 0) {
+        scene.registry.set(`${key}_hole`, { x: x0 / w, y: y0 / h, w: (x1 - x0 + 1) / w, h: (y1 - y0 + 1) / h });
+    }
     scene.textures.remove(key);
     scene.textures.addCanvas(key, canvas);
 }

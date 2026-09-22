@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import { Character, BossData, Recipe } from '../types';
 import { SaveManager } from '../managers/SaveManager';
-import { addRaritySleeve, getRaritySleeveInset, punchRaritySleeveCenters } from '../utils/style';
+import { addRaritySleeve, getRarityHoleRect, punchRaritySleeveCenters } from '../utils/style';
 import { attachPortrait } from '../utils/portrait';
 import { CharacterAssetLoader } from '../managers/CharacterAssetLoader';
 import { CopyBlock, fitWrappedText, layoutCopyStack, setCjkText } from '../utils/textFit';
@@ -237,10 +237,13 @@ export class Gallery extends Phaser.Scene {
         cardH: number
     ) {
         const rarity = char.rarity || 'N';
-        const inset = getRaritySleeveInset(rarity);
-        const innerW = Math.round(cardW * (1 - inset * 2));
-        const innerH = Math.round(cardH * (1 - inset * 2));
-        addRaritySleeve(this, card, rarity, cardW + 10, cardH + 10);
+        // 底板按卡套透明内洞的实测矩形铺设，保证立绘完全落在洞内、不与描边互相遮挡
+        const hole = getRarityHoleRect(this, rarity);
+        const sleeveW = cardW + 10;
+        const sleeveH = cardH + 10;
+        const innerW = Math.round(sleeveW * hole.w) - 8;
+        const innerH = Math.round(sleeveH * hole.h) - 8;
+        addRaritySleeve(this, card, rarity, sleeveW, sleeveH);
 
         const plateColor = isUnlocked ? 0xf7f1e8 : 0x2a2a38;
         const plate = this.add.rectangle(0, 0, innerW, innerH, plateColor).setOrigin(0.5);
@@ -303,15 +306,17 @@ export class Gallery extends Phaser.Scene {
         const discovered = foundKeys.has(key);
         const resultChar = this.characters.find(c => c.id === recipe.result);
         const rarity = resultChar?.rarity || 'Hidden';
-        const inset = getRaritySleeveInset(rarity);
-        const innerW = Math.round(cardW * (1 - inset * 2)) - 8;
-        const innerH = Math.round(cardH * (1 - inset * 2)) - 8;
+        const hole = getRarityHoleRect(this, rarity);
+        const sleeveW = cardW + 6;
+        const sleeveH = cardH + 6;
+        const innerW = Math.round(sleeveW * hole.w) - 14;
+        const innerH = Math.round(sleeveH * hole.h) - 14;
 
         const plate = this.add.rectangle(0, 0, innerW + 8, innerH + 8, discovered ? 0x1a2740 : 0x2a2a30).setOrigin(0.5);
         card.add(plate);
         const hit = this.add.rectangle(0, 0, cardW, cardH, 0x000000, 0.001).setOrigin(0.5);
         card.add(hit);
-        addRaritySleeve(this, card, rarity, cardW + 6, cardH + 6);
+        addRaritySleeve(this, card, rarity, sleeveW, sleeveH);
 
         const typeLabel = recipe.type === 'mutation' ? '变异' : '催化';
         const title = this.add.text(0, -innerH / 2 + 16, typeLabel, {
