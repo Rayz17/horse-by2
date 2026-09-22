@@ -4,6 +4,10 @@ import { addRaritySleeve, getRarityHoleRect, getTierColor } from '../utils/style
 import { attachPortrait } from '../utils/portrait';
 import { CopyBlock, fitWrappedText, layoutCopyStack } from '../utils/textFit';
 
+/** 立绘窗固定尺寸：所有稀有度一致，厚边框卡套不再挤压立绘。 */
+const PORTRAIT_SIZE = 264;
+const CAPTION_H = 52;
+
 export function buildCharacterCard(
     scene: Phaser.Scene,
     char: Character,
@@ -20,8 +24,8 @@ export function buildCharacterCard(
     const rarity = char.rarity || 'N';
     const container = scene.add.container(opts.x ?? 360, opts.y ?? 640);
 
-    // 底板必须精确盖住卡套的透明内洞：按内洞矩形反推底板位置与尺寸，
-    // 否则四周会透出背景（镂空错位）。内洞按卡套贴图空间归一化存储。
+    // 底板精确盖住卡套的透明内洞（按内洞矩形反推位置与尺寸），
+    // 立绘窗则固定尺寸，两者解耦：换边框不改立绘大小。
     const sleeveW = cardWidth + 28;
     const sleeveH = cardHeight + 28;
     addRaritySleeve(scene, container, rarity, sleeveW, sleeveH);
@@ -34,45 +38,37 @@ export function buildCharacterCard(
     container.add(plate);
 
     const padX = 14;
-    const padY = 16;
     const innerW = plateW - padX * 2;
     const innerLeft = plateCx - innerW / 2;
-    const innerTop = plateCy - plateH / 2 + padY;
-    const innerBottom = plateCy + plateH / 2 - padY;
 
-    const headerH = 70;
-    const headerY = innerTop + headerH / 2;
-    container.add(scene.add.rectangle(plateCx, headerY, innerW, headerH, 0x000000, 0.72));
-
-    const topInfo = scene.add.text(innerLeft + 8, innerTop + 16, `Lv.${char.level}  |  ${char.rarity}`, {
-        fontFamily: 'Arial', fontSize: '18px', color: '#ffd700', fontStyle: 'bold'
-    }).setOrigin(0, 0.5);
-    container.add(topInfo);
-
-    const name = scene.add.text(innerLeft + 8, innerTop + 42, '', {
-        fontFamily: 'Arial Black', color: '#ffffff'
-    }).setOrigin(0, 0.5);
-    container.add(name);
-    fitWrappedText(name, char.name, innerW - 16, 28, 26, 16);
-
-    const minText = 150;
-    const portraitBudget = innerBottom - (innerTop + headerH) - minText - 16;
-    // 立绘是卡面主视觉：占满预算（上限 300），白底衬图保证去底立绘清晰可见
-    const imageSize = Math.max(160, Math.min(300, Math.round(portraitBudget)));
-    const imageY = innerTop + headerH + 10 + imageSize / 2;
-    const windowBg = scene.add.rectangle(plateCx, imageY, imageSize, imageSize, 0xffffff, 1);
+    const windowTop = plateCy - plateH / 2 + 10;
+    const imageY = windowTop + PORTRAIT_SIZE / 2;
+    const windowBg = scene.add.rectangle(plateCx, imageY, PORTRAIT_SIZE, PORTRAIT_SIZE, 0xffffff, 1);
     windowBg.setStrokeStyle(3, 0xd4af37, 0.85);
     container.add(windowBg);
     const fallback = scene.add.text(plateCx, imageY, '?', { fontSize: '64px', color: '#999999' }).setOrigin(0.5);
     container.add(fallback);
-    attachPortrait(scene, container, char.id, plateCx, imageY, imageSize - 10, imageSize - 10, {
+    attachPortrait(scene, container, char.id, plateCx, imageY, PORTRAIT_SIZE - 10, PORTRAIT_SIZE - 10, {
         fallback,
         char,
         useOpaqueBounds: true
     });
 
-    const textTop = imageY + imageSize / 2 + 12;
-    const textBottom = innerBottom - 6;
+    // 名字/等级字幕条压在立绘窗底部（白底立绘上以半透明黑条保证可读），
+    // 不再占用立绘上方的独立栏位
+    const captionTop = windowTop + PORTRAIT_SIZE - CAPTION_H;
+    container.add(scene.add.rectangle(plateCx, captionTop, PORTRAIT_SIZE, CAPTION_H, 0x000000, 0.72).setOrigin(0.5, 0));
+    container.add(scene.add.text(plateCx - PORTRAIT_SIZE / 2 + 10, captionTop + 11, `Lv.${char.level}  |  ${char.rarity}`, {
+        fontFamily: 'Arial', fontSize: '17px', color: '#ffd700', fontStyle: 'bold'
+    }).setOrigin(0, 0.5));
+    const name = scene.add.text(plateCx - PORTRAIT_SIZE / 2 + 10, captionTop + 36, '', {
+        fontFamily: 'Arial Black', color: '#ffffff'
+    }).setOrigin(0, 0.5);
+    container.add(name);
+    fitWrappedText(name, char.name, PORTRAIT_SIZE - 20, 26, 24, 15);
+
+    const textTop = windowTop + PORTRAIT_SIZE + 8;
+    const textBottom = plateCy + plateH / 2 - 8;
     const copy: CopyBlock[] = [];
 
     if (char.skill?.name) {
